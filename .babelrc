@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "helpers": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
+  ],
+  "presets": ["babel-preset-env", "stage-0", "react"]
+}

@@ -1,0 +1,63 @@
+:root {
+  --wonder_border-color: rgb(220, 223, 230);
+  --wonder_border-margin: 24px;
+  --wonder_border-padding: 20px;
+  --wonder_border-hasChildren-margin: 10px;
+  --wonder_border-vertical-margin: 0.8rem;
+}
+.wonder_divider {
+  border-top: 1px solid var(--wonder_border-color);
+
+  height: 1px;
+  padding: 0 var(--wonder_border-padding);
+  margin: var(--wonder_border-margin) 0;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  &_hasChildren {
+    &_left {
+      justify-content: start;
+    }
+    &_center {
+      justify-content: center;
+    }
+    &_right {
+      justify-content: end;
+    }
+
+    & .wonder_divider_children {
+      border-left: var(--wonder_border-hasChildren-margin) solid #fff;
+      border-right: var(--wonder_border-hasChildren-margin) solid #fff;
+      background-color: #fff;
+    }
+  }
+
+  &_solid {
+    border-top: 1px solid var(--wonder_border-color);
+  }
+  &_dotted {
+    border-top: 1px dotted var(--wonder_border-color);
+  }
+  &_dashed {
+    border-top: 1px dashed var(--wonder_border-color);
+  }
+  &_groove {
+    border-top: 1px groove var(--wonder_border-color);
+  }
+
+  &_vertical {
+    border-left: 1px solid var(--wonder_border-color);
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    display: inline-block;
+    height: 1rem;
+    margin: 0 var(--wonder_border-vertical-margin);
+    padding: 0;
+    position: relative;
+    top: 0.2rem;
+    width: 0;
+  }
+}
