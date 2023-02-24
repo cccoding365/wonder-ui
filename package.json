@@ -26,6 +26,7 @@
     "components",
     "react18"
   ],
+  "license":"",
   "files": [
     "dist/*"
   ],
