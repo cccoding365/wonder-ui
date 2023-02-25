@@ -1,32 +1,30 @@
-$primary-color: #1890ff;  // 主题色
-$link-color: #1890ff;     // 链接色
-$success-color: #52c41a;  // 成功色
-$warning-color: #faad14;  // 警告色
-$error-color: #f5222d;    // 错误色
-$info-color: #909399;     // 信息色
-
+$primary-color: rgb(0, 100, 255); // 主题色
+$success-color: rgb(40, 200, 40); // 成功色
+$warning-color: rgb(250, 160, 10); // 警告色
+$error-color: rgb(230, 20, 20); // 错误色
+$info-color: rgb(120, 120, 120); // 信息色
+$link-color: rgb(90, 150, 240); // 链接色
 // 字体大小
 $font-size-base: 1rem; // 主字号
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 
-$heading-color: rgba(0, 0, 0, 0.8);               // 标题色
-$text-color: rgba(0, 0, 0, 0.65);                 // 主文本色
-$text-color-secondary: rgba(0, 0, 0, 0.45);       // 次文本色
-$disabled-color: rgba(0, 0, 0, 0.25);             // 失效色
-$box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); // 浮层阴影
-$border-color-hover: #409eff;                     //聚焦边界线的颜色
+$heading-color: rgba(0, 0, 0, 0.8); // 标题色
+$text-color: rgba(0, 0, 0, 0.65); // 主文本色
+$text-color-secondary: rgba(0, 0, 0, 0.45); // 次文本色
+$disabled-color: rgba(0, 0, 0, 0.25); // 失效色
+$box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); // 浮层阴影
+$border-color-hover: #409eff; //聚焦边界线的颜色
 $empty-color: #ffffff;
-$base-background: #f5f5f5e7;                      //默认背景色
-$base-hover-background: #f7f7f7af;                //默认背景色
+$base-background: #f5f5f5e7; //默认背景色
+$base-hover-background: #f7f7f7af; //默认背景色
 
 // Spacing 间距
-$padding-lg: 1.5rem;    // 容器
-$padding-md: 1rem;      // 用于小容器和按钮
-$padding-sm: 0.75rem;   // 用于表单控件中的每项间距
-$padding-xs: 0.5rem;    // 小间距
-$padding-xss: 0.25rem;  // 最小间距
+$padding-lg: 1.5rem; // 容器
+$padding-md: 1rem; // 用于小容器和按钮
+$padding-sm: 0.75rem; // 用于表单控件中的每项间距
+$padding-xs: 0.5rem; // 小间距
+$padding-xss: 0.25rem; // 最小间距
 
 // 行高
 $line-height-base: 1.5 !default;
@@ -34,7 +32,7 @@ $line-height-lg: 2 !default;
 $line-height-sm: 1.25 !default;
 
 // 边框 和 border radius
-$border-radius-base: 2px; // 组件/浮层圆角
+$border-radius-base: 3px; // 组件/浮层圆角
 $border-radius-lg: 0.3rem !default;
 $border-radius-sm: 0.2rem !default;
 $border-width: 1px !default;
@@ -42,29 +40,33 @@ $border-color-base: rgba(0, 0, 0, 0.06); // 边框色
 $border-style-base: solid;
 
 // 按钮
-$btn-shadow-base: #00000004;          // 按钮阴影
-$btn-border-color: #d9d9d9;           // 按钮边框色
-$disabled-text-color: #00000040;      // 失效色
-$disabled-background-color: #f5f5f5;  // 失效背景色
-$button-base-font-size: 14px;           // 按钮字号
+$btn-shadow-base: #00000004; // 按钮阴影
+$btn-border-color: #d9d9d9; // 按钮边框色
+$disabled-text-color: #00000040; // 失效色
+$disabled-background-color: #f5f5f5; // 失效背景色
+$button-base-font-size: 14px; // 按钮字号
 
 //输入框
-$input-text-color: #606266;             //输入框文字颜色
-$input-border-color: #dcdfe6;           //输入框边框颜色
-$input-border-color-hover: #c0c4cc;     //输入框默认hover上去时的边框的颜色
+$input-text-color: #606266; //输入框文字颜色
+$input-border-color: #dcdfe6; //输入框边框颜色
+$input-border-color-hover: #c0c4cc; //输入框默认hover上去时的边框的颜色
 $input-color-outline-shadow: #1890ff33; //输入框外界线阴影
-$input-color-error-shadow: 0 0 0 2px rgb(255 38 5 / 6%);      //输入框错误时的阴影
-$input-color-warning-shadow: 0 0 0 2px rgb(255 215 5 / 10%);  //输入框警告时时的阴影
+$input-color-error-shadow: 0 0 0 2px rgb(255 38 5 / 6%); //输入框错误时的阴影
+$input-color-warning-shadow: 0 0 0 2px rgb(255 215 5 / 10%); //输入框警告时时的阴影
 
 // Alert
-$alert-success-border-color: lighten($success-color, 30%);
+$alert-primary-border-color: lighten($primary-color, 20%);
+$alert-success-border-color: lighten($success-color, 20%);
 $alert-info-border-color: lighten($info-color, 20%);
 $alert-warning-border-color: lighten($warning-color, 20%);
-$alert-error-border-color: lighten($error-color, 12%);
-$alert-success-bg-color: lighten($success-color, 52%);
-$alert-info-bg-color: lighten($info-color, 36%);
-$alert-warning-bg-color: lighten($warning-color, 42%);
-$alert-error-bg-color: lighten($error-color, 45%);
+$alert-error-border-color: lighten($error-color, 20%);
+
+$alert-primary-bg-color: lighten($primary-color, 40%);
+$alert-success-bg-color: lighten($success-color, 40%);
+$alert-info-bg-color: lighten($info-color, 40%);
+$alert-warning-bg-color: lighten($warning-color, 40%);
+$alert-error-bg-color: lighten($error-color, 40%);
+
 $alert-text-color: $text-color;
 $alert-no-icon-padding-vertical: $padding-xs;
 $alert-icon-top: 0.25rem + calc($font-size-base * $line-height-base / 2) - calc($font-size-base / 2);

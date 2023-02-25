@@ -16,9 +16,9 @@ import Api from '../../demo/alert/api';
 export default function AlertPage () {
   return (
     <>
-      <Title title="Alert" notes="警告提示" desc="警告提示，展现需要关注的信息。" />
+      <Title title="Alert" notes="警告提示" desc="与用户进行交互，展示用户需要关注的信息。" />
       <InstanceView
-        subtitle="基本"
+        subtitle="基本使用"
         subnotes=""
         demo={<Demo1 />}
         subdesc="最基本的用法，适用于简短的警告提示。"

@@ -6,27 +6,29 @@ const Demo5 = () => {
     <Space direction="vertical" style={{ alignItems: 'normal' }}>
       <Alert
         type="success"
-        message="A success prompt"
-        description="Success Description Success Description Success Description"
+        message="这是一个 Success 警告提示！"
+        description="这里是关于这个 Success 警告提示的具体描述。"
+        showIcon
+        closeable
       />
       <Alert
         type="info"
-        message="A info prompt"
-        description="Info Description Info Description Info Description Info Description"
+        message="这是一个 Info 警告提示！"
+        description="这里是关于这个 Info 警告提示的具体描述。"
         showIcon
         closeable
       />
       <Alert
         type="warning"
-        message="A warning prompt"
-        description="Warning Description Warning Description Warning Description Warning Description"
+        message="这是一个 Warning 警告提示！"
+        description="这里是关于这个 Warning 警告提示的具体描述。"
         showIcon
         closeable
       />
       <Alert
         type="error"
-        message="A error prompt"
-        description="Error Description Error Description Error Description Error Description"
+        message="这是一个 Error 警告提示！"
+        description="这里是关于这个 Error 警告提示的具体描述。"
         showIcon
         closeable
       />

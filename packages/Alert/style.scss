@@ -6,9 +6,21 @@
   margin: 0;
   padding: 8px 15px 8px 37px;
   word-wrap: break-word;
-  border-radius: $border-radius-base;
 
   $this: &;
+
+  &-round {
+    border-radius: $border-radius-base;
+  }
+
+  &-primary {
+    border: $border-width $border-style-base $alert-primary-border-color;
+    background-color: $alert-primary-bg-color;
+
+    i {
+      color: $primary-color;
+    }
+  }
 
   &-success {
     border: $border-width $border-style-base $alert-success-border-color;
@@ -54,6 +66,7 @@
 
   &-no-icon {
     padding: $alert-no-icon-padding-vertical 15px;
+
     &-close-cion {
       top: $alert-no-icon-padding-vertical + calc($font-size-base * $line-height-base / 2) - $font-size-base;
     }
@@ -70,8 +83,9 @@
   }
 
   &-close-icon {
+    cursor: pointer;
     position: absolute;
-    top: .25rem + calc($font-size-base * $line-height-base / 2) -  calc($font-size-base / 2);
+    top: .25rem + calc($font-size-base * $line-height-base / 2) - calc($font-size-base / 2);
     right: $padding-md;
     padding: 0;
   }
@@ -81,7 +95,6 @@
     padding: $alert-with-description-padding;
     color: $alert-text-color;
     line-height: $line-height-base;
-    border-radius: $border-radius-base;
 
     &#{$this}-no-icon {
       padding: $alert-with-description-no-icon-padding-vertical 15px;
