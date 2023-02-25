@@ -12,22 +12,9 @@ export default function Demo() {
   return (
     <Space>
       <Button loading>加载中</Button>
-      <Button type="primary" loading >
-        加载中
-      </Button>
-      <Button
-        icon="m-icon-search"
-        round
-        loading={loading}
-        onClick={clickMe}
-      >点击我</Button>
-      <Button
-        type="primary"
-        round
-        icon="m-icon-setting"
-        loading={loading}
-        onClick={clickMe}
-      />
+      <Button type="primary" loading>加载中</Button>
+      <Button icon="m-icon-search" round loading={loading} onClick={clickMe}>点击我</Button>
+      <Button type="primary" round icon="m-icon-setting" loading={loading} onClick={clickMe} />
     </Space>
   )
 }
