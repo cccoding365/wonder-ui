@@ -1,5 +1,5 @@
-import React from 'react';
-import { Backtop } from '../../../packages';
+import React from 'react'
+import { Backtop } from '../../../packages'
 
 export default function Demo() {
   const style = {
@@ -10,11 +10,9 @@ export default function Demo() {
   return (
     <>
       <div id="TestBox" style={style}>
-        {
-          Array.from({ length: 100 }).map((item: any, index: number) => (<p key={index}>scroll element</p>))
-        }
+        {Array.from({ length: 100 }).map((item: any, index: number) => (<p key={index}>占位元素{index}……</p>))}
       </div>
       <Backtop target="#TestBox" style={{ right: '80px' }} visibilityHeight={500} />
     </>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Backtop, Button } from '../../../packages';
+import React from 'react'
+import { Backtop, Button } from '../../../packages'
 
 export default function Demo() {
   const style = {
     right: '140px',
-    background: '#faad14',
+    background: 'red',
     borderRadius: '50%',
   }
   return (
@@ -14,5 +14,5 @@ export default function Demo() {
         <i className="m-icon-arrow-up-filling" />
       </Backtop>
     </>
-  );
+  )
 }

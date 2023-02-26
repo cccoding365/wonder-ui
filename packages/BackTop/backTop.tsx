@@ -1,25 +1,17 @@
-import React, { CSSProperties, useState } from 'react';
-import './style.scss';
-import classNames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import React, { useState } from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import { CSSTransition } from 'react-transition-group'
+import { BackTopProps } from './props'
 
-export type BackTopProps = {
-  style?: CSSProperties;
-  className?: string;
-  target: string;
-  visibilityHeight?: number;
-  children?: React.ReactNode;
-};
 export default function Backtop(props: BackTopProps): JSX.Element {
   const { style, className, target, visibilityHeight, children } = props;
   const [showBackTop, setShowBackTop] = useState(false);
   const backTopClass = classNames({
     'wonder_back_top': true,
     [className || '']: !!className,
-  });
-  const backTopStyle = {
-    ...style,
-  }
+  })
+  const backTopStyle = { ...style }
   let interValTimer: any = null
   // 监测target元素的滚动条位置
   const handleScroll = () => {
