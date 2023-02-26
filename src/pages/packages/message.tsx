@@ -25,7 +25,7 @@ export default function MessagePage() {
         subtitle="其他提示类型"
         subnotes=""
         demo={<Demo2 />}
-        subdesc="不同的提示状态：成功、警告、错误。"
+        subdesc="不同的提示状态：成功、警告、错误、信息。"
         path="message/demo2"
       />
       <InstanceView
