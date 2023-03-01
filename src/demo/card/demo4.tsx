@@ -1,19 +1,20 @@
-import React from "react";
-import { Space, Card } from "../../../packages";
+import React from "react"
+import { Space, Card } from "../../../packages"
 
 export default function Demo() {
   return (
     <Space>
       <Card
+        style={{ width: 300 }}
         cover={
           <img
-            src="https://tse3-mm.cn.bing.net/th/id/OIP-C.WlEfcCkZr7X99O0bNYfWkwHaEo?w=297&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            src="/img/wallhaven-1pqz9v.jpg"
             alt="封面图片"
           />
         }
       >
-        <span>content</span>
+        <span>这里是卡片的内容区域……</span>
       </Card>
     </Space>
-  );
+  )
 }

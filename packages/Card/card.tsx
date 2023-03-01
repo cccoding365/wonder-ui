@@ -1,44 +1,20 @@
-import React, { CSSProperties } from "react";
-import classNames from "classnames";
-import "./style.scss";
-
-export type CardProps = {
-  style?: CSSProperties;
-  size?: "default" | "small";
-  cardType?: "outer" | "inner";
-  className?: string;
-  children?: React.ReactNode;
-  cardTitle?: string;
-  extraContent?: React.ReactNode;
-  bordered?: boolean;
-  cover?: React.ReactNode;
-  shadows?: "hover" | "always" | "none";
-  actions?: Array<React.ReactNode>;
-};
+import React from "react"
+import classNames from "classnames"
+import "./style.scss"
+import { CardProps } from './props'
 
 function Card(props: CardProps): JSX.Element {
-  const {
-    style,
-    size,
-    cardType,
-    className,
-    children,
-    cardTitle,
-    extraContent,
-    bordered,
-    cover,
-    shadows,
-    actions,
-  } = props;
+  const { style, size, cardType, className, children, cardTitle, extraContent, bordered, cover, shadows, actions } = props
 
   const cardClass = classNames("wonder_card", {
     [`wonder_card_shadows_${shadows}`]: true,
     [`wonder_card_${size}`]: true,
-    wonder_card_inner:cardType === 'inner',
+    wonder_card_inner: cardType === 'inner',
     wonder_card_border: bordered,
-    wonder_card_noContent:children === null,
+    wonder_card_noContent: children === null,
     [className || ""]: !!className,
-  });
+  })
+
   return (
     <div className={cardClass} style={style || undefined}>
       {cardTitle !== "" ? (
@@ -49,17 +25,15 @@ function Card(props: CardProps): JSX.Element {
       ) : null}
       {cover !== null ? <div className="wonder_card_cover">{cover}</div> : null}
       <main className="wonder_card_main">{children}</main>
-      {actions !== null ? (
-        <footer className="wonder_card_footer">{actions}</footer>
-      ) : null}
+      {actions !== null ? (<footer className="wonder_card_footer">{actions}</footer>) : null}
     </div>
-  );
+  )
 }
 
 Card.defaultProps = {
   style: "",
   size: "default",
-  cardType:'outer',
+  cardType: 'outer',
   className: "",
   children: null,
   cardTitle: "",
@@ -68,6 +42,6 @@ Card.defaultProps = {
   cover: null,
   shadows: "none",
   actions: null,
-};
+}
 
 export default Card;

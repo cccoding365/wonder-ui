@@ -1,14 +1,14 @@
-import React from "react";
-import { Space, Card } from "../../../packages";
+import React from "react"
+import { Space, Card } from "../../../packages"
 
 export default function Demo() {
   return (
     <Space>
       <Card style={{ width: 300 }}>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
+        <p>卡片内容</p>
+        <p>卡片内容</p>
+        <p>卡片内容</p>
       </Card>
     </Space>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import { Space, Card } from "../../../packages";
+import React from "react"
+import { Space, Card } from "../../../packages"
 
 export default function Demo() {
   return (
@@ -12,10 +12,10 @@ export default function Demo() {
       }}
     >
       <Card cardTitle="无边框卡片" bordered={false} style={{ width: 300 }}>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
+        <p>卡片内容</p>
+        <p>卡片内容</p>
+        <p>卡片内容</p>
       </Card>
     </Space>
-  );
+  )
 }
