@@ -1,7 +1,7 @@
-import React from "react";
-import { Empty } from "../../../packages";
+import React from "react"
+import { Empty } from "../../../packages"
 
-export default function Demo() {
+export default function Demo1() {
   return (
     <Empty />
   )

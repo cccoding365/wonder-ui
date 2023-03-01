@@ -1,4 +1,4 @@
-import Empty from './empty';
+import Empty from './empty'
 
-export type { emptyProps } from './empty';
-export default Empty;
+export type { EmptyProps } from './props'
+export default Empty
