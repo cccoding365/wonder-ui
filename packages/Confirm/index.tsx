@@ -1,4 +1,4 @@
-import Confirm from './Confirm';
+import Confirm from './Confirm'
 
-export type { ConfirmProps } from './Confirm';
-export default Confirm;
+export type { ConfirmProps } from './props'
+export default Confirm
