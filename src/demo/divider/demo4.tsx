@@ -1,14 +1,14 @@
-import React from 'react';
-import { Divider } from '../../../packages';
+import React from 'react'
+import { Divider, Space } from '../../../packages'
 
-export default function Demo() {
+export default function Demo4() {
   return (
-    <div>
-      Create
+    <Space>
+      左侧内容
       <Divider direction="vertical" />
-      Whbbit
+      中部内容
       <Divider direction="vertical" />
-      Happy
-    </div>
-  );
+      右侧内容
+    </Space>
+  )
 }

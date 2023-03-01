@@ -1,17 +1,10 @@
-import React, { CSSProperties } from 'react';
-import './style.scss';
-import classNames from 'classnames';
-
-export interface DividerProps {
-  style?: CSSProperties;
-  direction?: 'horizontal' | 'vertical';
-  position?: 'left' | 'center' | 'right';
-  lineStyle?: 'solid' | 'dotted' | 'dashed' | 'groove';
-  children?: React.ReactNode;
-}
+import React from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import { DividerProps } from './props'
 
 const Divider: React.FC<DividerProps> = (props) => {
-  const { style, direction, position, lineStyle, children } = props;
+  const { style, direction, position, lineStyle, children } = props
 
   const dividerClass = classNames({
     wonder_divider: true,
@@ -23,16 +16,16 @@ const Divider: React.FC<DividerProps> = (props) => {
     [`wonder_divider wonder_divider_vertical`]: direction === 'vertical' && !children, // 垂直分割线
     [`wonder_divider_${position}`]: true,
     [`wonder_divider_${lineStyle}`]: true,
-  });
+  })
+
   return (
     <div className={dividerClass} style={style || undefined}>
-      {/* 文本内容 */}
       {children && direction !== 'vertical' && (
         <span className="wonder_divider_children">{children}</span>
       )}
     </div>
-  );
-};
+  )
+}
 
 Divider.defaultProps = {
   direction: 'horizontal',
@@ -40,6 +33,6 @@ Divider.defaultProps = {
   lineStyle: 'solid',
   children: null,
   style: undefined,
-};
+}
 
-export default Divider;
+export default Divider

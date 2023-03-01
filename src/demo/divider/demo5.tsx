@@ -1,16 +1,14 @@
-import React from 'react';
-import { Divider } from '../../../packages';
+import React from 'react'
+import { Divider } from '../../../packages'
 
-export default function Demo() {
+export default function Demo5() {
   return (
     <div>
-      I sit at my window this morning where the world like a passer-by stops for
-      a moment, nods to me and goes.
-      <Divider style={{ borderColor: '#c41d7f', color: '#c41d7f' }}>
+      嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？
+      <Divider style={{ borderColor: 'rgb(0, 100, 255)', color: 'rgb(0, 100, 255)' }}>
         我是分割线
       </Divider>
-      There little thoughts are the rustle of leaves; they have their whisper of
-      joy in my mind.
+      所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。
     </div>
-  );
+  )
 }
