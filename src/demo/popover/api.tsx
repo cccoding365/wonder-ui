@@ -1,7 +1,7 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
-function Api() {
+export default function Api() {
   const columns: any = [
     {
       title: '参数',
@@ -24,13 +24,13 @@ function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource: any = [
     {
       arguments: 'title',
       description: '卡片标题',
       type: (
-        <span style={{ color: '#c41d7f' }}>
+        <span>
           ReactNode | ( ) =&gt; ReactNode
         </span>
       ),
@@ -41,7 +41,7 @@ function Api() {
       arguments: 'content',
       description: '卡片内容',
       type: (
-        <span style={{ color: '#c41d7f' }}>
+        <span>
           ReactNode | ( ) =&gt; ReactNode
         </span>
       ),
@@ -51,32 +51,32 @@ function Api() {
     {
       arguments: 'placement',
       description: '弹出位置',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: (
-        <span style={{ color: '#1890ff' }}>top | bottom | left | right</span>
+        <span>top | bottom | left | right</span>
       ),
       default: 'top',
     },
     {
       arguments: 'defaultOpen',
       description: '默认是否显隐',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
-      optional: <span style={{ color: '#1890ff' }}>true | false</span>,
+      type: <span>boolean</span>,
+      optional: <span>true | false</span>,
       default: 'false',
     },
     {
       arguments: 'visible',
       description: '用于手动控制浮层显隐',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
-      optional: <span style={{ color: '#1890ff' }}>true | false</span>,
+      type: <span>boolean</span>,
+      optional: <span>true | false</span>,
       default: 'false',
     },
     {
       arguments: 'trigger',
       description: '触发行为',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: (
-        <span style={{ color: '#1890ff' }}>
+        <span>
           &apos;hover&apos; | &apos;focus&apos; | &apos;click&apos;
         </span>
       ),
@@ -86,30 +86,29 @@ function Api() {
       arguments: 'getPopupContainer',
       description: '浮层渲染父节点，默认渲染到 body 上',
       type: (
-        <span style={{ color: '#c41d7f' }}>
+        <span>
           (triggerNode: HTMLElement) =&gt; HTMLElement
         </span>
       ),
-      optional: <span style={{ color: '#1890ff' }}>-</span>,
+      optional: <span>-</span>,
       default: '() => document.body',
     },
     {
       arguments: 'onOpenChange',
       description: '显示隐藏的回调',
       type: (
-        <span style={{ color: '#c41d7f' }}>(visible: boolean) =&gt; void</span>
+        <span>(visible: boolean) =&gt; void</span>
       ),
-      optional: <span style={{ color: '#1890ff' }}>-</span>,
+      optional: <span>-</span>,
       default: '-',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }
 
-export default Api;
+

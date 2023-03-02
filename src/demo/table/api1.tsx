@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -30,16 +30,15 @@ export default function Api() {
     // {
     //   arguments: 'headStyle',
     //   description: '自定义表头样式',
-    //   type: <span style={{ color: "#c41d7f" }}>CSSProperties</span>,
+    //   type: <span>CSSProperties</span>,
     //   optional: '-',
     //   default: '-',
     // },
   ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">columns 配置说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -30,58 +30,57 @@ export default function Api() {
     {
       arguments: 'headStyle',
       description: '自定义表头样式',
-      type: <span style={{ color: "#c41d7f" }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'bodyStyle',
       description: '自定义表格主体样式',
-      type: <span style={{ color: "#c41d7f" }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'className',
       description: '自定义类名',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'border',
       description: '是否显示边框',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
-      optional: <span style={{ color: "#1890ff" }}>true | false</span>,
+      type: <span>string</span>,
+      optional: <span>true | false</span>,
       default: 'false',
     },
     {
       arguments: 'size',
       description: '表格尺寸',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
-      optional: <span style={{ color: "#1890ff" }}>large | medium | small</span>,
+      type: <span>string</span>,
+      optional: <span>large | medium | small</span>,
       default: 'large',
     },
     {
       arguments: 'columns',
       description: '表格列配置（详见下方columns 配置说明）',
-      type: <span style={{ color: "#c41d7f" }}>array</span>,
+      type: <span>array</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'dataSource',
       description: '表格数据源',
-      type: <span style={{ color: "#c41d7f" }}>array</span>,
+      type: <span>array</span>,
       optional: '-',
       default: '-',
     },
   ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">Table API 说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

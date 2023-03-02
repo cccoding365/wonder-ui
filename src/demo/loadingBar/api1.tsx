@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -30,30 +30,29 @@ export default function Api() {
     {
       arguments: 'color',
       description: '自定义LoadingBar颜色',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '#1890ff',
     },
     {
       arguments: 'height',
       description: '自定义LoadingBar高度',
-      type: <span style={{ color: "#c41d7f" }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '2',
     },
     {
       arguments: 'percent',
       description: 'update方法可选参数，定义完成进度，最大100',
-      type: <span style={{ color: "#c41d7f" }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '-',
     },
   ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">object参数 说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import { Space, Button } from '../../../packages';
+import React from "react"
+import { Space, Button } from '../../../packages'
 
-export default function Demo() {
+export default function Demo4() {
   return (
     <>
       <Space gap="20px" direction="vertical" align="center">

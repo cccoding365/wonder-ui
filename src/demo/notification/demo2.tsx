@@ -1,21 +1,21 @@
-import React from 'react';
-import { Button, Notification, Space } from '../../../packages';
+import React from 'react'
+import { Button, Notification, Space } from '../../../packages'
 
-function Demo() {
+export default function Demo() {
   const openNotification = (placement) => {
     Notification.open({
       message: 'Notification Title',
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       onClick: () => {
-        console.log('Notification Clicked!');
+        console.log('Notification Clicked!')
       },
       onClose: () => {
-        console.log('Notification Closed!');
+        console.log('Notification Closed!')
       },
       placement,
-    });
-  };
+    })
+  }
   return (
     <Space>
       <Button type="primary" onClick={() => openNotification('topLeft')}>
@@ -31,7 +31,5 @@ function Demo() {
         BottomRight
       </Button>
     </Space>
-  );
+  )
 }
-
-export default Demo;

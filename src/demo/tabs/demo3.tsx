@@ -1,9 +1,9 @@
-import React from 'react';
-import { Tabs } from '../../../packages';
+import React from 'react'
+import { Tabs } from '../../../packages'
 
-const { TabsItem } = Tabs;
+const { TabsItem } = Tabs
 
-export default function Demo() {
+export default function Demo3() {
 
   return (
     <Tabs defaultActiveKey={0} type="card">

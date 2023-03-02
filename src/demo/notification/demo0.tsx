@@ -1,21 +1,21 @@
-import React from 'react';
-import { Button, Notification } from '../../../packages';
+import React from 'react'
+import { Button, Notification } from '../../../packages'
 
-function Demo() {
-  const [api, contextHolder] = Notification.useNotification();
+export default function Demo() {
+  const [api, contextHolder] = Notification.useNotification()
   const openNotification = () => {
     api.info({
       message: 'Notification Title',
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       onClick: () => {
-        console.log('Notification Clicked!');
+        console.log('Notification Clicked!')
       },
       onClose: () => {
-        console.log('Notification Closed!');
+        console.log('Notification Closed!')
       },
-    });
-  };
+    })
+  }
   return (
     <>
       <div>{contextHolder}</div>
@@ -23,7 +23,7 @@ function Demo() {
         Open the notification box
       </Button>
     </>
-  );
+  )
 }
 
-export default Demo;
+

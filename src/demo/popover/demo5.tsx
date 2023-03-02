@@ -1,13 +1,13 @@
-import React from 'react';
-import { Button, Popover } from '../../../packages';
+import React from 'react'
+import { Button, Popover } from '../../../packages'
 
-function Demo() {
+export default function Demo5() {
   const content = (
     <div>
-      <p>Content</p>
-      <p>Content</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
     </div>
-  );
+  )
 
   return (
     <Popover
@@ -21,7 +21,5 @@ function Demo() {
     >
       <Button>Click me</Button>
     </Popover>
-  );
+  )
 }
-
-export default Demo;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -25,55 +25,55 @@ export default function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource: any = [
     {
       arguments: 'style',
       description: '自定义Progress样式',
-      type: <span style={{ color: '#c41d7f' }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'className',
       description: '自定义Progress类名',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'type',
       description: '类型',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
-      optional: <span style={{ color: '#1890ff' }}>line | circle</span>,
+      type: <span>string</span>,
+      optional: <span>line | circle</span>,
       default: 'line',
     },
     {
       arguments: 'percent',
       description: '进度属性',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '0',
     },
     {
       arguments: 'strokeColor',
       description: '进度条色彩',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
-      optional: <span style={{ color: '#1890ff' }}> - </span>,
+      type: <span>boolean</span>,
+      optional: <span> - </span>,
       default: 'blue',
     },
     {
       arguments: 'trailColor',
       description: '未完成色彩',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
-      optional: <span style={{ color: '#1890ff' }}> - </span>,
+      type: <span>boolean</span>,
+      optional: <span> - </span>,
       default: '#e5e5e5',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">通用 API 说明</p>
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

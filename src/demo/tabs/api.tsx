@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   // Tabs
@@ -31,28 +31,28 @@ export default function Api() {
     {
       arguments: 'defaultActiveKey',
       description: '初始化选中面板的 key',
-      type: <span style={{ color: "#c41d7f" }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '0',
     },
     {
       arguments: 'className',
       description: '自定义Tabs类名',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'type',
       description: 'Tabs页签的类型',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
-      optional: <span style={{ color: "#1890ff" }}>line | card</span>,
+      type: <span>string</span>,
+      optional: <span>line | card</span>,
       default: 'line',
     },
     {
       arguments: 'onTabClick',
       description: 'tab 被点击时回调函数',
-      type: <span style={{ color: "#c41d7f" }}>function(key: number)</span>,
+      type: <span>function(key: number)</span>,
       optional: '-',
       default: '-',
     }
@@ -86,27 +86,25 @@ export default function Api() {
     {
       arguments: 'disabled',
       description: '是否禁用',
-      type: <span style={{ color: "#c41d7f" }}>boolean</span>,
-      optional: <span style={{ color: "#1890ff" }}>true | false</span>,
+      type: <span>boolean</span>,
+      optional: <span>true | false</span>,
       default: 'false',
     },
     {
       arguments: 'tab',
       description: '选项卡头显示文字',
-      type: <span style={{ color: "#c41d7f" }}>ReactNode | string</span>,
+      type: <span>ReactNode | string</span>,
       optional: '-',
       default: '-',
     }
   ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
       <p className="packagesSubTitle">Tabs</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
       <p className="packagesSubTitle">TabsItem</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columnsItem} dataSource={dataSourceItem} size="middle" border />
     </div>
-  );
+  )
 }

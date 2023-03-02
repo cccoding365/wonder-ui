@@ -26,7 +26,7 @@ export default function Api() {
       field: "default",
       width: 80,
     },
-  ];
+  ]
   const dataSource: any = [
     {
       arguments: "style",

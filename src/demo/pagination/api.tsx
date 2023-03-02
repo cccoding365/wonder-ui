@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns = [
@@ -28,7 +28,7 @@ export default function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource = [
     {
       arguments: 'pageSize',
@@ -65,7 +65,7 @@ export default function Api() {
     {
       arguments: 'style',
       description: '行内样式',
-      type: <span style={{ color: '#c41d7f' }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: '-',
       default: 'undefined',
       required: '否',
@@ -92,11 +92,11 @@ export default function Api() {
       default: 'undefined',
       required: '否',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

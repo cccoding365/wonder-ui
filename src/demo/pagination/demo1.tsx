@@ -1,8 +1,6 @@
-import React from 'react';
-import Pagination from '../../../packages/Pagination';
+import React from 'react'
+import Pagination from '../../../packages/Pagination'
 
-const Demo1 = () => {
-  return <Pagination total={100} />;
-};
-
-export default Demo1;
+export default function Demo1() {
+  return <Pagination total={100} />
+}

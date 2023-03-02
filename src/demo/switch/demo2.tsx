@@ -1,7 +1,7 @@
-import React from 'react';
-import { Space, Switch } from '../../../packages';
+import React from 'react'
+import { Space, Switch } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   return (
     <Space>
       <Switch checkedChildren="开" unCheckedChildren="关" />
@@ -11,5 +11,5 @@ export default function Demo() {
         unCheckedChildren={<i className="m-icon-close" />}
       />
     </Space>
-  );
+  )
 }

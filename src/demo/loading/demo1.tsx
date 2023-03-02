@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import { Loading, Button } from '../../../packages'
 
-export default function Demo() {
+export default function Demo1() {
   const handlerClick = () => {
     Loading.show({
       target: 'body',

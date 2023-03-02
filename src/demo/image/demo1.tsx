@@ -1,5 +1,5 @@
-import React from "react";
-import { Image } from "../../../packages";
+import React from "react"
+import { Image } from "../../../packages"
 
 export default function Demo() {
   const fits = ['cover', 'contain', 'fill', 'none', 'scale-down']
@@ -13,6 +13,5 @@ export default function Demo() {
         </div>
       })}
     </div>
-
   )
 }

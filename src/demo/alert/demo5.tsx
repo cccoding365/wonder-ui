@@ -1,5 +1,5 @@
-import React from 'react';
-import { Alert, Space } from '../../../packages';
+import React from 'react'
+import { Alert, Space } from '../../../packages'
 
 const Demo5 = () => {
   return (
@@ -33,7 +33,7 @@ const Demo5 = () => {
         closeable
       />
     </Space>
-  );
-};
+  )
+}
 
-export default Demo5;
+export default Demo5

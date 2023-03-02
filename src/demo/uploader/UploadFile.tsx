@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns = [
@@ -19,7 +19,7 @@ export default function Api() {
       title: '可选值',
       field: 'optional',
     },
-  ];
+  ]
   const dataSource = [
     {
       arguments: 'name',
@@ -57,11 +57,11 @@ export default function Api() {
       type: 'File',
       optional: '-',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">UploadFile 类型说明</p>
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

@@ -1,14 +1,13 @@
-import React from 'react';
-import { Button, LoadingBar, Space } from '../../../packages';
+import React from 'react'
+import { Button, LoadingBar, Space } from '../../../packages'
 
-let n = 10;
-export default function Demo() {
+let n = 10
+export default function Demo1() {
   const updateClick = () => {
-
     if (n >= 100) {
       n = 0
     } else {
-      n += 10;
+      n += 10
     }
     LoadingBar.update({ percent: n })
   }

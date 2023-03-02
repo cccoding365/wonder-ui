@@ -1,7 +1,7 @@
-import React from "react";
-import { Space, Button } from '../../../packages';
+import React from "react"
+import { Space, Button } from '../../../packages'
 
-export default function Demo() {
+export default function Demo3() {
   return (
     <Space gap="20px">
       <Button>按钮</Button>

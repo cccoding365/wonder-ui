@@ -1,5 +1,5 @@
-import React from 'react';
-import { Input } from '../../../packages';
+import React from 'react'
+import { Input } from '../../../packages'
 
 export default function Demo() {
   return (

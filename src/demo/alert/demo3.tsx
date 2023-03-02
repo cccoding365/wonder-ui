@@ -1,5 +1,5 @@
-import React from 'react';
-import { Alert, Space } from '../../../packages';
+import React from 'react'
+import { Alert, Space } from '../../../packages'
 
 const Demo3 = () => {
   return (
@@ -12,4 +12,4 @@ const Demo3 = () => {
   )
 }
 
-export default Demo3;
+export default Demo3

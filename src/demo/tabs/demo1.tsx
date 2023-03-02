@@ -1,13 +1,13 @@
-import React from 'react';
-import { Tabs } from '../../../packages';
+import React from 'react'
+import { Tabs } from '../../../packages'
 
-const { TabsItem } = Tabs;
+const { TabsItem } = Tabs
 
-export default function Demo() {
+export default function Demo1() {
 
   const handleClick = (key: number) => {
-    console.log(key);
-  };
+    console.log(key)
+  }
 
   return (
     <Tabs onTabClick={handleClick} className={"tabs_test"}>

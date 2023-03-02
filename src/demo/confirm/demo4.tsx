@@ -16,11 +16,11 @@ export default function Demo3() {
       },
     })
       .then((res) => {
-        console.log(res);
+        console.log(res)
         Message.success('确认')
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
         Message.error('出错了')
       })
   }

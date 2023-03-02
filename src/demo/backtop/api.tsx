@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -30,28 +30,28 @@ export default function Api() {
     {
       arguments: 'target',
       description: '触发滚动的元素对象',
-      type: <span style={{ color: "#c41d7f" }}>HTMLElement</span>,
+      type: <span>HTMLElement</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'visibilityHeight',
       description: '滚动达到这个距离出现"回到顶部组件"',
-      type: <span style={{ color: "#c41d7f" }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '240',
     },
     {
       arguments: 'style',
       description: '自定义Backtop组件的样式',
-      type: <span style={{ color: "#c41d7f" }}>Object</span>,
+      type: <span>Object</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'className',
       description: '自定义Backtop组件的类名',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
@@ -62,5 +62,5 @@ export default function Api() {
       {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

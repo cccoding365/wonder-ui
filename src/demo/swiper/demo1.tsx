@@ -1,7 +1,7 @@
-import React from 'react';
-import { Swiper } from '../../../packages';
+import React from 'react'
+import { Swiper } from '../../../packages'
 
-export default function Demo() {
+export default function Demo1() {
   const style = {
     display: 'flex',
     alignItems: 'center',
@@ -9,7 +9,7 @@ export default function Demo() {
     width: '100%',
     height: '100%',
     fontSize: '2.5rem',
-  };
+  }
   return (
     <Swiper>
       <div style={style}>1</div>
@@ -17,5 +17,5 @@ export default function Demo() {
       <div style={style}>3</div>
       <div style={style}>4</div>
     </Swiper>
-  );
+  )
 }

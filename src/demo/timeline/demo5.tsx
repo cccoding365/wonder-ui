@@ -1,7 +1,7 @@
-import React from 'react';
-import { Timeline } from '../../../packages';
+import React from 'react'
+import { Timeline } from '../../../packages'
 
-export default function Demo() {
+export default function Demo5() {
   return (
     <Timeline mode="middle">
       <Timeline.Item color="green">I was born in 1996</Timeline.Item>
@@ -15,5 +15,5 @@ export default function Demo() {
       </Timeline.Item>
       <Timeline.Item color="gray">I am in Beijing now</Timeline.Item>
     </Timeline>
-  );
+  )
 }

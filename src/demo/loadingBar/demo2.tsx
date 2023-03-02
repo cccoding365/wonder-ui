@@ -1,7 +1,7 @@
-import React from 'react';
-import { Button, LoadingBar, Space } from '../../../packages';
+import React from 'react'
+import { Button, LoadingBar, Space } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   return (
     <Space>
       <Button onClick={() => LoadingBar.start({ color: '#52c41a', height: 4 })}>Start</Button>

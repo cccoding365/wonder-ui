@@ -1,9 +1,8 @@
-import React from 'react';
-import { Mask, Button, Table } from '../../../packages';
-import { example } from '../../utils/example';
+import React from 'react'
+import { Mask, Button } from '../../../packages'
 
-export default function Demo() {
-  const [visible, setVisible] = React.useState(false);
+export default function Demo3() {
+  const [visible, setVisible] = React.useState(false)
   const style = {
     width: '500px',
     height: '500px',

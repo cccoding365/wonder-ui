@@ -1,5 +1,5 @@
-import React from "react";
-import { Space, Image } from "../../../packages";
+import React from "react"
+import { Space, Image } from "../../../packages"
 
 export default function Demo() {
   const imgList = [

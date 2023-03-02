@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 function Api() {
   const columns: any = [
@@ -24,28 +24,28 @@ function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource: any = [
     {
       arguments: 'message',
       description: '提醒框标题 (必填)',
-      type: <span style={{ color: '#c41d7f' }}>string | ReactNode</span>,
+      type: <span>string | ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'description',
       description: '提醒框内容 (必填)',
-      type: <span style={{ color: '#c41d7f' }}>string | ReactNode</span>,
+      type: <span>string | ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'placement',
       description: '弹出位置',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: (
-        <span style={{ color: '#1890ff' }}>
+        <span>
           topLeft | topRight | bottomLeft | bottomRight
         </span>
       ),
@@ -54,82 +54,82 @@ function Api() {
     {
       arguments: 'duration',
       description: '默认 4.5 秒后自动关闭，配置为 0 或 null 则不自动关闭',
-      type: <span style={{ color: '#c41d7f' }}>number | null</span>,
+      type: <span>number | null</span>,
       optional: '-',
       default: '4.5',
     },
     {
       arguments: 'className',
       description: '自定义 CSS class',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'style',
       description: '自定义内联样式',
-      type: <span style={{ color: '#c41d7f' }}>{'{  }'}</span>,
-      optional: <span style={{ color: '#1890ff' }}>CSSProperties</span>,
+      type: <span>{'{  }'}</span>,
+      optional: <span>CSSProperties</span>,
       default: '-',
     },
     {
       arguments: 'bottom',
       description: '消息从底部弹出时，距离底部的位置，单位像素',
-      type: <span style={{ color: '#c41d7f' }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '24',
     },
     {
       arguments: 'top',
       description: '消息从顶部弹出时，距离顶部的位置，单位像素',
-      type: <span style={{ color: '#c41d7f' }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '24',
     },
     {
       arguments: 'closeIcon',
       description: '自定义关闭图标',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'icon',
       description: '自定义图标',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'btn',
       description: '自定义关闭按钮',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'onClick',
       description: '点击通知时触发的回调函数',
-      type: <span style={{ color: '#c41d7f' }}>() =&gt; void</span>,
+      type: <span>() =&gt; void</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'onClose',
       description: '点击通知时触发的回调函数',
-      type: <span style={{ color: '#c41d7f' }}>() =&gt; void</span>,
+      type: <span>() =&gt; void</span>,
       optional: '-',
       default: '-',
     },
-  ];
+  ]
 
   const globalDataSource: any = [
     {
       arguments: 'placement',
       description: '弹出位置',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: (
-        <span style={{ color: '#1890ff' }}>
+        <span>
           topLeft | topRight | bottomLeft | bottomRight
         </span>
       ),
@@ -138,45 +138,45 @@ function Api() {
     {
       arguments: 'duration',
       description: '默认 4.5 秒后自动关闭，配置为 0 或 null 则不自动关闭',
-      type: <span style={{ color: '#c41d7f' }}>number | null</span>,
+      type: <span>number | null</span>,
       optional: '-',
       default: '4.5',
     },
     {
       arguments: 'bottom',
       description: '消息从底部弹出时，距离底部的位置，单位像素',
-      type: <span style={{ color: '#c41d7f' }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '24',
     },
     {
       arguments: 'top',
       description: '消息从顶部弹出时，距离顶部的位置，单位像素',
-      type: <span style={{ color: '#c41d7f' }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: '24',
     },
     {
       arguments: 'closeIcon',
       description: '自定义关闭图标',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
-  ];
-  const typeList = ['success', 'error', 'info', 'warning', 'open'];
-  const liStyle = { listStyle: 'circle', margin: '12px 0' };
+  ]
+  const typeList = ['success', 'error', 'info', 'warning', 'open']
+  const liStyle = { listStyle: 'circle', margin: '12px 0' }
   const codeStyle = {
     backgroundColor: 'rgba(0, 0, 0, 0.04)',
     border: '1px solid rgba(5, 5, 5, 0.06)',
     borderRadius: '3px',
     padding: '0.2em 0.4em',
     fontSize: '10px',
-  };
+  }
   const code =
-    "notification.config({\n placement: 'bottomRight',\n bottom: 50,\n duration: 3,\n})";
+    "notification.config({\n placement: 'bottomRight',\n bottom: 50,\n duration: 3,\n})"
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
       <ul>
         {typeList.map((item) => (
@@ -208,7 +208,7 @@ function Api() {
         border
       />
     </div>
-  );
+  )
 }
 
-export default Api;
+export default Api

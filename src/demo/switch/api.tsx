@@ -1,5 +1,5 @@
-import React, { CSSProperties } from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns = [
@@ -24,40 +24,40 @@ export default function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource = [
     {
       arguments: 'disabled',
       description: '是否禁用',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
+      type: <span>boolean</span>,
       optional: 'true/false',
       default: 'false',
     },
     {
       arguments: 'loading',
       description: '加载状态',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
+      type: <span>boolean</span>,
       optional: 'true/false',
       default: 'false',
     },
     {
       arguments: 'checked',
       description: '初始是否选中',
-      type: <span style={{ color: '#c41d7f' }}>boolean</span>,
+      type: <span>boolean</span>,
       optional: 'true/false',
       default: 'false',
     },
     {
       arguments: 'checkedChildren',
       description: '选中时的内容	',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: null,
     },
     {
       arguments: 'unCheckedChildren',
       description: '非选中时的内容	',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: null,
     },
@@ -65,7 +65,7 @@ export default function Api() {
       arguments: 'onChange',
       description: '变化时的函数调用',
       type: (
-        <span style={{ color: '#c41d7f' }}>
+        <span>
           {
             'function(check:boolean, event: React.MouseEvent<HTMLButtonElement>)'
           }
@@ -78,7 +78,7 @@ export default function Api() {
       arguments: 'onClick',
       description: '点击时的函数调用',
       type: (
-        <span style={{ color: '#c41d7f' }}>
+        <span>
           {
             'function(check:boolean, event: React.MouseEvent<HTMLButtonElement>)'
           }
@@ -87,12 +87,11 @@ export default function Api() {
       optional: '-',
       default: null,
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

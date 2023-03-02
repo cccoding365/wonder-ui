@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Button, Space, Swiper } from '../../../packages';
+import React, { useState } from 'react'
+import { Button, Space, Swiper } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   const [dotPosition, setDotPosition] = useState<
     'left' | 'right' | 'bottom' | 'top'
-  >('bottom');
+  >('bottom')
 
   const handleChangeDotPostion = (position) => {
-    setDotPosition(position);
-  };
+    setDotPosition(position)
+  }
   const style = {
     display: 'flex',
     alignItems: 'center',
@@ -16,7 +16,7 @@ export default function Demo() {
     width: '100%',
     height: '100%',
     fontSize: '2.5rem',
-  };
+  }
   return (
     <Space>
       <span>不显示指示点</span>
@@ -52,18 +52,10 @@ export default function Demo() {
       </Swiper>
 
       <span>指示点位置</span>
-      <Button onClick={() => handleChangeDotPostion('top')}>
-        切换指示点位置为top
-      </Button>
-      <Button onClick={() => handleChangeDotPostion('bottom')}>
-        切换指示点位置为bottom
-      </Button>
-      <Button onClick={() => handleChangeDotPostion('left')}>
-        切换指示点位置为left
-      </Button>
-      <Button onClick={() => handleChangeDotPostion('right')}>
-        切换指示点位置为right
-      </Button>
+      <Button onClick={() => handleChangeDotPostion('top')}> 切换指示点位置为top </Button>
+      <Button onClick={() => handleChangeDotPostion('bottom')}> 切换指示点位置为bottom </Button>
+      <Button onClick={() => handleChangeDotPostion('left')}> 切换指示点位置为left </Button>
+      <Button onClick={() => handleChangeDotPostion('right')}> 切换指示点位置为right </Button>
       <Swiper dotPosition={dotPosition}>
         <div style={style}>1</div>
         <div style={style}>2</div>
@@ -71,5 +63,5 @@ export default function Demo() {
         <div style={style}>4</div>
       </Swiper>
     </Space>
-  );
+  )
 }

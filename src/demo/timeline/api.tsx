@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -25,62 +25,62 @@ export default function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource: any = [
     {
       arguments: 'mode',
       description: '时间轴和内容的相对位置',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: 'left | middle | right',
       default: 'left',
     },
     {
       arguments: 'style',
       description: '自定义Timeline组件的样式',
-      type: <span style={{ color: '#c41d7f' }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: 'left | middle | right',
       default: 'left',
     },
     {
       arguments: 'reverse',
       description: '倒序排列时间轴',
-      type: <span style={{ color: '#c41d7f' }}>CSSProperties</span>,
+      type: <span>CSSProperties</span>,
       optional: 'true | false',
       default: 'false',
     },
-  ];
+  ]
   const dataSourceItem: any = [
     {
       arguments: 'color',
       description: '轴点颜色',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: 'blue | green | red | gray | 自定义',
       default: 'blue',
     },
     {
       arguments: 'dot',
       description: '自定义时间轴点',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'label',
       description: '单独展示label',
-      type: <span style={{ color: '#c41d7f' }}>ReactNode</span>,
+      type: <span>ReactNode</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'position',
       description: '自定义内容展示位置, 仅在mode=middle模式下生效',
-      type: <span style={{ color: '#c41d7f' }}>string</span>,
+      type: <span>string</span>,
       optional: 'left | right',
       default: '-',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
       <p className="packagesSubTitle">Timeline</p>
       <p>时间轴</p>
@@ -94,5 +94,5 @@ export default function Api() {
         border
       />
     </div>
-  );
+  )
 }

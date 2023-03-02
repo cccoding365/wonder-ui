@@ -1,7 +1,7 @@
-import React from 'react';
-import { Space, Progress } from '../../../packages';
+import React from 'react'
+import { Space, Progress } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   return (
     <Space>
       <Progress type="circle" percent={10} strokeColor="red">
@@ -30,5 +30,5 @@ export default function Demo() {
         完成40%
       </Progress>
     </Space>
-  );
+  )
 }

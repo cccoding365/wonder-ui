@@ -1,8 +1,8 @@
-import React from 'react';
-import { Tooltip, Button, Space } from '../../../packages';
+import React from 'react'
+import { Tooltip, Button, Space } from '../../../packages'
 
-export default function Demo() {
-  const colors = ['#f50', '#2db7f5', '#87d068', '#108ee9', '#C176DC', '#7E5AE7', '#EE964B', '#00B572', '#6FE4FF', '#A6FFC2'];
+export default function Demo3() {
+  const colors = ['#f50', '#2db7f5', '#87d068', '#108ee9', '#C176DC', '#7E5AE7', '#EE964B', '#00B572', '#6FE4FF', '#A6FFC2']
   return (
     <Space>
       {
@@ -13,5 +13,5 @@ export default function Demo() {
         ))
       }
     </Space>
-  );
+  )
 }

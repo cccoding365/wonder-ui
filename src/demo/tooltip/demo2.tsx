@@ -1,7 +1,7 @@
-import React from 'react';
-import { Tooltip, Button, Space } from '../../../packages';
+import React from 'react'
+import { Tooltip, Button, Space } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   return (
     <Space>
       <Tooltip content="这是从上边弹出的文字提示气泡">
@@ -17,5 +17,5 @@ export default function Demo() {
         <Button>右边弹出</Button>
       </Tooltip>
     </Space>
-  );
+  )
 }

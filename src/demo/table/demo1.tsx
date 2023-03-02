@@ -1,7 +1,7 @@
-import React from 'react';
-import { Table, Button, Message } from '../../../packages';
+import React from 'react'
+import { Table, Button, Message } from '../../../packages'
 
-export default function Demo() {
+export default function Demo1() {
   const columns: any = [
     {
       title: '姓名',
@@ -56,8 +56,7 @@ export default function Demo() {
       add: '北京市朝阳区',
     },
   ]
-  // headStyle={{ background: '#bae0ff' }}
   return (
     <Table columns={columns} dataSource={dataSource} />
-  );
+  )
 }

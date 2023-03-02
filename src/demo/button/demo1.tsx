@@ -1,5 +1,5 @@
-import React from 'react';
-import { Space, Button } from '../../../packages';
+import React from 'react'
+import { Space, Button } from '../../../packages'
 
 export default function Demo() {
   return (

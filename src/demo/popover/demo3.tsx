@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Popover } from '../../../packages';
+import React, { useState } from 'react'
+import { Button, Popover } from '../../../packages'
 
-function Demo() {
-  const [visible, setVisible] = useState(false);
+export default function Demo() {
+  const [visible, setVisible] = useState(false)
   const hide = () => {
-    setVisible(false);
-  };
+    setVisible(false)
+  }
   const content = (
     <button
       type="button"
@@ -20,10 +20,10 @@ function Demo() {
     >
       Close
     </button>
-  );
+  )
   const onOpenChange = (e) => {
-    setVisible(e);
-  };
+    setVisible(e)
+  }
   return (
     <Popover
       visible={visible}
@@ -33,7 +33,5 @@ function Demo() {
     >
       <Button>Hover me</Button>
     </Popover>
-  );
+  )
 }
-
-export default Demo;

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { Button, Notification } from '../../../packages';
+import React, { useEffect } from 'react'
+import { Button, Notification } from '../../../packages'
 
-function Demo() {
+export default function Demo() {
   useEffect(() => {
     Notification.config({
       bottom: 400,
@@ -11,9 +11,7 @@ function Demo() {
       closeIcon: <i className="m-icon-success-filling" />,
       message: '',
       description: '',
-    });
-  }, []);
-  return <Button type="primary">Open the notification box</Button>;
+    })
+  }, [])
+  return <Button type="primary">Open the notification box</Button>
 }
-
-export default Demo;

@@ -1,20 +1,20 @@
-import React from 'react';
-import { Button, Notification, Space } from '../../../packages';
+import React from 'react'
+import { Button, Notification, Space } from '../../../packages'
 
-function Demo() {
+export default function Demo4() {
   const openNotification = (type) => {
     Notification[type]({
       message: 'Notification Title',
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       onClick: () => {
-        console.log('Notification Clicked!');
+        console.log('Notification Clicked!')
       },
       onClose: () => {
-        console.log('Notification Closed!');
+        console.log('Notification Closed!')
       },
-    });
-  };
+    })
+  }
   return (
     <Space>
       <Button type="success" onClick={() => openNotification('success')}>
@@ -30,7 +30,7 @@ function Demo() {
         Error
       </Button>
     </Space>
-  );
+  )
 }
 
-export default Demo;
+

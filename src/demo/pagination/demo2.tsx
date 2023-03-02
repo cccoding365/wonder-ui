@@ -1,13 +1,13 @@
-import React from 'react';
-import Pagination from '../../../packages/Pagination';
+import React from 'react'
+import Pagination from '../../../packages/Pagination'
 
-const Demo2 = () => {
+export default function Demo2() {
   const handlePageChange = (page: number, pageSize: number) => {
-    console.log('page', page, 'pageSize', pageSize);
-  };
+    console.log('page', page, 'pageSize', pageSize)
+  }
   const handlePageSizeChange = (pageSize: number) => {
-    console.log('pageSize', pageSize);
-  };
+    console.log('pageSize', pageSize)
+  }
   return (
     <Pagination
       pageSize={20}
@@ -23,7 +23,5 @@ const Demo2 = () => {
         item: 'item',
       }}
     />
-  );
-};
-
-export default Demo2;
+  )
+}

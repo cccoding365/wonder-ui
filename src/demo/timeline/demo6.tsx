@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Space, Timeline } from '../../../packages';
+import React, { useState } from 'react'
+import { Button, Space, Timeline } from '../../../packages'
 
-export default function Demo() {
-  const [mode, setMode] = useState<'left' | 'middle' | 'right'>('left');
+export default function Demo6() {
+  const [mode, setMode] = useState<'left' | 'middle' | 'right'>('left')
   return (
     <>
       <Space>
@@ -45,5 +45,5 @@ export default function Demo() {
         </Timeline.Item>
       </Timeline>
     </>
-  );
+  )
 }

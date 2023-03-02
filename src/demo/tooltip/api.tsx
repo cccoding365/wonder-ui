@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns: any = [
@@ -30,44 +30,43 @@ export default function Api() {
     {
       arguments: 'content',
       description: '提示文字描述',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '-',
     },
     {
       arguments: 'align',
       description: '弹出位置',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
-      optional: <span style={{ color: "#1890ff" }}>top | bottom | left | right</span>,
+      type: <span>string</span>,
+      optional: <span>top | bottom | left | right</span>,
       default: 'top',
     },
     {
       arguments: 'color',
       description: '自定义弹出框背景颜色',
-      type: <span style={{ color: "#c41d7f" }}>string</span>,
+      type: <span>string</span>,
       optional: '-',
       default: '#000000',
     },
     {
       arguments: 'zIndex',
       description: '设置 Tooltip 的 z-index',
-      type: <span style={{ color: "#c41d7f" }}>number</span>,
+      type: <span>number</span>,
       optional: '-',
       default: 1011,
     },
     {
       arguments: 'onOpenChange',
       description: '显示隐藏的回调',
-      type: <span style={{ color: "#c41d7f" }}>{'(open: boolean) => void'}</span>,
+      type: <span>{'(open: boolean) => void'}</span>,
       optional: '-',
       default: '-',
     },
   ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
-      {/* <p className="packagesSubNodes">API 说明</p> */}
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }

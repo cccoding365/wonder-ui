@@ -1,47 +1,43 @@
-import message from '../../../packages/Message';
-import Uploader, {
-  UploaderProps,
-  UploadFile,
-} from '../../../packages/Uploader';
-import React, { useState } from 'react';
+import message from '../../../packages/Message'
+import Uploader, { UploaderProps, UploadFile, } from '../../../packages/Uploader'
+import React, { useState } from 'react'
 
 const getBase64 = (img: File, callback: (url: string) => void) => {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result as string));
-  reader.readAsDataURL(img);
-};
+  const reader = new FileReader()
+  reader.addEventListener('load', () => callback(reader.result as string))
+  reader.readAsDataURL(img)
+}
 
 const beforeUpload = (file: UploadFile) => {
   const isJpgOrPng =
     file.originFileObj!.type === 'image/jpeg' ||
-    file.originFileObj!.type === 'image/png';
+    file.originFileObj!.type === 'image/png'
   if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG file!');
+    message.error('You can only upload JPG/PNG file!')
   }
-  const isLt2M = file.size / 1024 / 1024 < 2;
+  const isLt2M = file.size / 1024 / 1024 < 2
   if (!isLt2M) {
-    message.error('Image must smaller than 2MB!');
+    message.error('Image must smaller than 2MB!')
   }
-  return isJpgOrPng && isLt2M;
-};
+  return isJpgOrPng && isLt2M
+}
 
 const App: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [imageUrl, setImageUrl] = useState<string>();
+  const [loading, setLoading] = useState(false)
+  const [imageUrl, setImageUrl] = useState<string>()
 
   const handleChange: UploaderProps['onChange'] = (file: UploadFile) => {
     if (file.status === 'uploading') {
-      setLoading(true);
-      return;
+      setLoading(true)
+      return
     }
     if (file.status === 'done') {
-      // Get this url from response in real world.
       getBase64(file.originFileObj as File, (url) => {
-        setLoading(false);
-        setImageUrl(url);
-      });
+        setLoading(false)
+        setImageUrl(url)
+      })
     }
-  };
+  }
 
   const uploadButton = (
     <div
@@ -69,12 +65,11 @@ const App: React.FC = () => {
         <div style={{ marginTop: 8 }}>Upload</div>
       </div>
     </div>
-  );
+  )
 
   return (
     <Uploader
       name="avatar"
-      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       beforeUpload={beforeUpload}
       onChange={handleChange}
       showUploadList={false}
@@ -85,7 +80,7 @@ const App: React.FC = () => {
         uploadButton
       )}
     </Uploader>
-  );
-};
+  )
+}
 
-export default App;
+export default App

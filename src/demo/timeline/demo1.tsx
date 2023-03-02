@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Space, Button, Timeline } from '../../../packages';
+import React, { useState } from 'react'
+import { Space, Button, Timeline } from '../../../packages'
 
-export default function Demo() {
-  const [reverse, setReverse] = useState<boolean>(false);
+export default function Demo1() {
+  const [reverse, setReverse] = useState<boolean>(false)
   return (
     <>
       <Space>
@@ -28,5 +28,5 @@ export default function Demo() {
         <Timeline.Item>I am in Beijing now</Timeline.Item>
       </Timeline>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Space, Swiper } from '../../../packages';
+import React from 'react'
+import { Space, Swiper } from '../../../packages'
 
-export default function Demo() {
+export default function Demo3() {
   const style = {
     display: 'flex',
     alignItems: 'center',
@@ -9,7 +9,7 @@ export default function Demo() {
     width: '100%',
     height: '100%',
     fontSize: '2.5rem',
-  };
+  }
   return (
     <Space>
       <span>不显示箭头</span>
@@ -39,5 +39,5 @@ export default function Demo() {
         <div style={style}>4</div>
       </Swiper>
     </Space>
-  );
+  )
 }

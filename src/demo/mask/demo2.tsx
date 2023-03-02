@@ -1,8 +1,8 @@
-import React from 'react';
-import { Mask, Button } from '../../../packages';
+import React from 'react'
+import { Mask, Button } from '../../../packages'
 
-export default function Demo() {
-  const [visible, setVisible] = React.useState(false);
+export default function Demo2() {
+  const [visible, setVisible] = React.useState(false)
   return (
     <>
       <Mask visible={visible} maskClick={() => setVisible(false)} background="rgba(0,0,0,.8)" />

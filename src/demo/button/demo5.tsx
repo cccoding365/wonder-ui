@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Space, Button } from '../../../packages';
+import React, { useState } from 'react'
+import { Space, Button } from '../../../packages'
 
 export default function Demo() {
   const [loading, setLoading] = useState<boolean>(false)

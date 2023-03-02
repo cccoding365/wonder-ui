@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import { Loading } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   React.useEffect(() => {
     Loading.show({
       target: '.testLoading',

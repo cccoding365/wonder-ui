@@ -1,7 +1,7 @@
-import React from 'react';
-import { Progress } from '../../../packages';
+import React from 'react'
+import { Progress } from '../../../packages'
 
-export default function Demo() {
+export default function Demo1() {
   return (
     <>
       <div style={{ margin: 15 }}>
@@ -18,5 +18,5 @@ export default function Demo() {
         </Progress>
       </div>
     </>
-  );
+  )
 }

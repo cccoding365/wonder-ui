@@ -1,7 +1,7 @@
-import React from 'react';
-import { Tag } from '../../../packages';
+import React from 'react'
+import { Tag } from '../../../packages'
 
-export default function Demo() {
+export default function Demo1() {
   return (
     <>
       <Tag>默认</Tag>
@@ -11,5 +11,5 @@ export default function Demo() {
       <Tag color="green">绿色</Tag>
       <Tag color="#6050dc">#6050dc</Tag>
     </>
-  );
+  )
 }

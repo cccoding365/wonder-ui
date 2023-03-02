@@ -1,8 +1,7 @@
-import React from 'react';
-import { Tag } from '../../../packages';
-// import {}
+import React from 'react'
+import { Tag } from '../../../packages'
 
-export default function Demo() {
+export default function Demo2() {
   return (
     <>
       <Tag icon={<i className="m-icon-collection" />}>默认</Tag>
@@ -13,5 +12,5 @@ export default function Demo() {
         绿色
       </Tag>
     </>
-  );
+  )
 }

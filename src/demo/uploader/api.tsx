@@ -1,5 +1,5 @@
-import React, { CSSProperties } from 'react';
-import { Table } from '../../../packages';
+import React from 'react'
+import { Table } from '../../../packages'
 
 export default function Api() {
   const columns = [
@@ -28,7 +28,7 @@ export default function Api() {
       field: 'default',
       width: 80,
     },
-  ];
+  ]
   const dataSource = [
     {
       arguments: 'accept',
@@ -128,11 +128,11 @@ export default function Api() {
       default: '',
       required: 'false',
     },
-  ];
+  ]
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '100%' }}>
       <p className="packagesSubTitle">API 说明</p>
       <Table columns={columns} dataSource={dataSource} size="middle" border />
     </div>
-  );
+  )
 }
