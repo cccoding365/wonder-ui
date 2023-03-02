@@ -2,14 +2,14 @@
   @name:"Input 输入框"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/Input/demo1';
-import Demo2 from '../../demo/Input/demo2';
-import Demo3 from '../../demo/Input/demo3';
-import Demo4 from '../../demo/Input/demo4';
-import Demo5 from '../../demo/Input/demo5';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/Input/demo1'
+import Demo2 from '../../demo/Input/demo2'
+import Demo3 from '../../demo/Input/demo3'
+import Demo4 from '../../demo/Input/demo4'
+import Demo5 from '../../demo/Input/demo5'
 
 export default function InputPage() {
   return (
@@ -51,5 +51,5 @@ export default function InputPage() {
         path="Input/demo5"
       />
     </div>
-  );
+  )
 }

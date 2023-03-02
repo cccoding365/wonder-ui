@@ -2,13 +2,13 @@
   @name:"Image 图片"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/image/demo1';
-import Demo2 from '../../demo/image/demo2';
-import Demo3 from '../../demo/image/demo3';
-import Api from '../../demo/image/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/image/demo1'
+import Demo2 from '../../demo/image/demo2'
+import Demo3 from '../../demo/image/demo3'
+import Api from '../../demo/image/api'
 
 export default function DemoPage() {
   return (
@@ -37,5 +37,5 @@ export default function DemoPage() {
       />
       <Api />
     </div>
-  );
+  )
 }

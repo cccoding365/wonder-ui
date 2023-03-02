@@ -2,13 +2,13 @@
   @name:"Tooltip 文字提示"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/tooltip/demo1';
-import Demo2 from '../../demo/tooltip/demo2';
-import Demo3 from '../../demo/tooltip/demo3';
-import Api from '../../demo/tooltip/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/tooltip/demo1'
+import Demo2 from '../../demo/tooltip/demo2'
+import Demo3 from '../../demo/tooltip/demo3'
+import Api from '../../demo/tooltip/api'
 
 export default function ToolTipPage() {
   return (
@@ -37,5 +37,5 @@ export default function ToolTipPage() {
       />
       <Api />
     </>
-  );
+  )
 }

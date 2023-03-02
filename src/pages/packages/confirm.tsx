@@ -3,13 +3,13 @@
   @group:"反馈"
 */
 import React from 'react'
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
 import Demo1 from '../../demo/confirm/demo1'
 import Demo2 from '../../demo/confirm/demo2'
 import Demo3 from '../../demo/confirm/demo3'
 import Demo4 from '../../demo/confirm/demo4'
-import Api from '../../demo/confirm/api';
+import Api from '../../demo/confirm/api'
 
 export default function ConfirmPage() {
   return (
@@ -45,5 +45,5 @@ export default function ConfirmPage() {
       />
       <Api />
     </>
-  );
+  )
 }

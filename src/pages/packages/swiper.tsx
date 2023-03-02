@@ -2,14 +2,14 @@
   @name:"Swiper 轮播"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import Api from '../../demo/swiper/api';
-import Demo1 from '../../demo/swiper/demo1';
-import Demo2 from '../../demo/swiper/demo2';
-import Demo3 from '../../demo/swiper/demo3';
-import Demo4 from '../../demo/swiper/demo4';
-import InstanceView from '../../layout/instanceView';
+import React from 'react'
+import Title from '../../components/title'
+import Api from '../../demo/swiper/api'
+import Demo1 from '../../demo/swiper/demo1'
+import Demo2 from '../../demo/swiper/demo2'
+import Demo3 from '../../demo/swiper/demo3'
+import Demo4 from '../../demo/swiper/demo4'
+import InstanceView from '../../layout/instanceView'
 
 export default function SwiperPage() {
   return (
@@ -54,5 +54,5 @@ export default function SwiperPage() {
 
       <Api />
     </>
-  );
+  )
 }

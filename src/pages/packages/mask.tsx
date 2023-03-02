@@ -2,17 +2,17 @@
   @name:"Mask 遮罩"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/mask/demo1';
-import Demo2 from '../../demo/mask/demo2';
-import Demo3 from '../../demo/mask/demo3';
-import Api from '../../demo/mask/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/mask/demo1'
+import Demo2 from '../../demo/mask/demo2'
+import Demo3 from '../../demo/mask/demo3'
+import Api from '../../demo/mask/api'
 
 export default function DemoPage() {
   return (
-    <div>
+    <>
       <Title title="Mask" notes="遮罩" desc="页面遮罩层" />
       <InstanceView
         subtitle="基本示例"
@@ -36,6 +36,6 @@ export default function DemoPage() {
         path="mask/demo3"
       />
       <Api />
-    </div>
-  );
+    </>
+  )
 }

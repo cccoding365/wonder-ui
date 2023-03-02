@@ -2,13 +2,13 @@
   @name:"Progress 进度条"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/progress/demo1';
-import Demo2 from '../../demo/progress/demo2';
-import Api from '../../demo/progress/api';
-import CircleApi from '../../demo/progress/apicircle';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/progress/demo1'
+import Demo2 from '../../demo/progress/demo2'
+import Api from '../../demo/progress/api'
+import CircleApi from '../../demo/progress/apicircle'
 
 export default function MessagePage() {
   return (
@@ -29,8 +29,7 @@ export default function MessagePage() {
         path="progress/demo2"
       />
       <Api />
-
       <CircleApi />
     </>
-  );
+  )
 }

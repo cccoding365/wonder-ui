@@ -2,15 +2,15 @@
   @name:"Divider 分割线"
   @group:"其他"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/divider/demo1';
-import Demo2 from '../../demo/divider/demo2';
-import Demo3 from '../../demo/divider/demo3';
-import Demo4 from '../../demo/divider/demo4';
-import Demo5 from '../../demo/divider/demo5';
-import Api from '../../demo/divider/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/divider/demo1'
+import Demo2 from '../../demo/divider/demo2'
+import Demo3 from '../../demo/divider/demo3'
+import Demo4 from '../../demo/divider/demo4'
+import Demo5 from '../../demo/divider/demo5'
+import Api from '../../demo/divider/api'
 
 export default function DividerPage() {
   return (
@@ -58,5 +58,5 @@ export default function DividerPage() {
 
       <Api />
     </>
-  );
+  )
 }

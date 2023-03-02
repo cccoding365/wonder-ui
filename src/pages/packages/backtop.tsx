@@ -2,13 +2,13 @@
   @name:"Backtop 回到顶部"
   @group:"交互"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/backtop/demo1';
-import Demo2 from '../../demo/backtop/demo2';
-import Demo3 from '../../demo/backtop/demo3';
-import Api from '../../demo/backtop/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/backtop/demo1'
+import Demo2 from '../../demo/backtop/demo2'
+import Demo3 from '../../demo/backtop/demo3'
+import Api from '../../demo/backtop/api'
 
 export default function DemoPage() {
   return (
@@ -37,5 +37,5 @@ export default function DemoPage() {
       />
       <Api />
     </div>
-  );
+  )
 }

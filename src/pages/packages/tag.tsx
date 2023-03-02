@@ -2,18 +2,17 @@
   @name:"Tag 标签"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/tag/demo1';
-import Demo2 from '../../demo/tag/demo2';
-import Demo3 from '../../demo/tag/demo3';
-
-import Api from '../../demo/tag/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/tag/demo1'
+import Demo2 from '../../demo/tag/demo2'
+import Demo3 from '../../demo/tag/demo3'
+import Api from '../../demo/tag/api'
 
 export default function DemoPage() {
   return (
-    <div>
+    <>
       <Title title="Tag" notes="标签" desc="进行标记和分类的小标签" />
       <InstanceView
         subtitle="基本使用"
@@ -37,6 +36,6 @@ export default function DemoPage() {
         path="tag/demo1"
       />
       <Api />
-    </div>
-  );
+    </>
+  )
 }

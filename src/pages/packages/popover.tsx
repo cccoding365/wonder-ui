@@ -2,15 +2,15 @@
   @name:"Popover 气泡卡片"
   @group:"反馈"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/popover/demo1';
-import Demo2 from '../../demo/popover/demo2';
-import Demo3 from '../../demo/popover/demo3';
-import Demo4 from '../../demo/popover/demo4';
-import Demo5 from '../../demo/popover/demo5';
-import Api from '../../demo/popover/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/popover/demo1'
+import Demo2 from '../../demo/popover/demo2'
+import Demo3 from '../../demo/popover/demo3'
+import Demo4 from '../../demo/popover/demo4'
+import Demo5 from '../../demo/popover/demo5'
+import Api from '../../demo/popover/api'
 
 export default function PopOverPage() {
   return (
@@ -57,5 +57,5 @@ export default function PopOverPage() {
       />
       <Api />
     </>
-  );
+  )
 }

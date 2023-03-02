@@ -2,12 +2,12 @@
   @name:"Pagination 分页"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/pagination/demo1';
-import Demo2 from '../../demo/pagination/demo2';
-import Api from '../../demo/pagination/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/pagination/demo1'
+import Demo2 from '../../demo/pagination/demo2'
+import Api from '../../demo/pagination/api'
 
 export default function IconPage() {
   return (
@@ -31,5 +31,5 @@ export default function IconPage() {
       />
       <Api />
     </>
-  );
+  )
 }

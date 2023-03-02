@@ -2,13 +2,13 @@
   @name:"Empty 空状态"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/empty/demo1';
-import Demo2 from '../../demo/empty/demo2';
-import Demo3 from '../../demo/empty/demo3';
-import Api from '../../demo/empty/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/empty/demo1'
+import Demo2 from '../../demo/empty/demo2'
+import Demo3 from '../../demo/empty/demo3'
+import Api from '../../demo/empty/api'
 
 export default function DemoPage() {
   return (
@@ -37,5 +37,5 @@ export default function DemoPage() {
       />
       <Api />
     </div>
-  );
+  )
 }

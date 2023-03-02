@@ -2,11 +2,11 @@
   @name:"Icon 图标"
   @group:"常规"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/icon/demo1';
-import Demo2 from '../../demo/icon/demo2';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/icon/demo1'
+import Demo2 from '../../demo/icon/demo2'
 
 export default function IconPage() {
   return (
@@ -23,5 +23,5 @@ export default function IconPage() {
       />
       <Demo2 />
     </>
-  );
+  )
 }

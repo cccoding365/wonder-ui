@@ -2,13 +2,13 @@
   @name:"Message 全局提示"
   @group:"交互"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/message/demo1';
-import Demo2 from '../../demo/message/demo2';
-import Demo3 from '../../demo/message/demo3';
-import Demo4 from '../../demo/message/demo4';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/message/demo1'
+import Demo2 from '../../demo/message/demo2'
+import Demo3 from '../../demo/message/demo3'
+import Demo4 from '../../demo/message/demo4'
 
 export default function MessagePage() {
   return (
@@ -43,5 +43,5 @@ export default function MessagePage() {
         path="message/demo4"
       />
     </>
-  );
+  )
 }

@@ -2,14 +2,13 @@
   @name:"Uploader 上传组件"
   @group:"数据录入"
 */
-import React from 'react';
-
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/uploader/demo1';
-import Demo2 from '../../demo/uploader/demo2';
-import Api from '../../demo/uploader/api';
-import UploadFile from '../../demo/uploader/UploadFile';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/uploader/demo1'
+import Demo2 from '../../demo/uploader/demo2'
+import Api from '../../demo/uploader/api'
+import UploadFile from '../../demo/uploader/UploadFile'
 
 export default function AlertPage() {
   return (
@@ -33,5 +32,5 @@ export default function AlertPage() {
       <Api />
       <UploadFile />
     </>
-  );
+  )
 }

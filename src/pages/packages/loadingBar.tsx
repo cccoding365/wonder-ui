@@ -2,13 +2,13 @@
   @name:"LoadingBar 加载进度条"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/loadingBar/demo1';
-import Demo2 from '../../demo/loadingBar/demo2';
-import Api from '../../demo/loadingBar/api';
-import Api1 from '../../demo/loadingBar/api1';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/loadingBar/demo1'
+import Demo2 from '../../demo/loadingBar/demo2'
+import Api from '../../demo/loadingBar/api'
+import Api1 from '../../demo/loadingBar/api1'
 
 export default function DemoPage() {
   return (
@@ -31,5 +31,5 @@ export default function DemoPage() {
       <Api />
       <Api1 />
     </div>
-  );
+  )
 }

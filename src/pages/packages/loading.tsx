@@ -2,12 +2,12 @@
   @name:"Loading 加载中"
   @group:"交互"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/loading/demo1';
-import Demo2 from '../../demo/loading/demo2';
-import Demo3 from '../../demo/loading/demo3';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/loading/demo1'
+import Demo2 from '../../demo/loading/demo2'
+import Demo3 from '../../demo/loading/demo3'
 
 export default function DemoPage() {
   return (
@@ -35,5 +35,5 @@ export default function DemoPage() {
         path="loading/demo3"
       />
     </div>
-  );
+  )
 }

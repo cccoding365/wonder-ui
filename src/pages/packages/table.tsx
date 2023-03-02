@@ -2,13 +2,12 @@
   @name:"Table 表格"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/table/demo1';
-import Demo2 from '../../demo/table/demo2';
-import API from '../../demo/table/api';
-import API1 from '../../demo/table/api1';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/table/demo1'
+import Demo2 from '../../demo/table/demo2'
+import API from '../../demo/table/api'
 
 export default function TablePage() {
   return (
@@ -18,7 +17,7 @@ export default function TablePage() {
         subtitle="基本使用"
         subnotes=""
         demo={<Demo1 />}
-        subdesc="基础的表格展示用法（待基础组件完成后继续集成）"
+        subdesc="基础的表格展示用法"
         path="table/demo1"
       />
       <InstanceView
@@ -29,7 +28,6 @@ export default function TablePage() {
         path="table/demo2"
       />
       <API />
-      <API1 />
     </>
-  );
+  )
 }

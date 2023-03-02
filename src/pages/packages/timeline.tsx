@@ -2,20 +2,20 @@
   @name:"Timeline 时间轴"
   @group:"数据"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/timeline/demo1';
-import Demo2 from '../../demo/timeline/demo2';
-import Demo3 from '../../demo/timeline/demo3';
-import Demo4 from '../../demo/timeline/demo4';
-import Demo5 from '../../demo/timeline/demo5';
-import Demo6 from '../../demo/timeline/demo6';
-import Api from '../../demo/timeline/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/timeline/demo1'
+import Demo2 from '../../demo/timeline/demo2'
+import Demo3 from '../../demo/timeline/demo3'
+import Demo4 from '../../demo/timeline/demo4'
+import Demo5 from '../../demo/timeline/demo5'
+import Demo6 from '../../demo/timeline/demo6'
+import Api from '../../demo/timeline/api'
 
 export default function DemoPage() {
   return (
-    <div>
+    <>
       <Title title="Timeline" notes="时间轴" desc="垂直展示的时间流信息" />
       <InstanceView
         subtitle="基本使用"
@@ -62,6 +62,6 @@ export default function DemoPage() {
       />
 
       <Api />
-    </div>
-  );
+    </>
+  )
 }

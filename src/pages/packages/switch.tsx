@@ -2,14 +2,14 @@
   @name:"Switch 开关"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/switch/demo1';
-import Demo2 from '../../demo/switch/demo2';
-import Demo3 from '../../demo/switch/demo3';
-import Demo4 from '../../demo/switch/demo4';
-import Api from '../../demo/switch/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/switch/demo1'
+import Demo2 from '../../demo/switch/demo2'
+import Demo3 from '../../demo/switch/demo3'
+import Demo4 from '../../demo/switch/demo4'
+import Api from '../../demo/switch/api'
 
 export default function SwitchPage() {
   return (
@@ -54,5 +54,5 @@ export default function SwitchPage() {
 
       <Api />
     </>
-  );
+  )
 }

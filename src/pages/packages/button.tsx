@@ -2,16 +2,16 @@
   @name:"Button 按钮"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/button/demo1';
-import Demo2 from '../../demo/button/demo2';
-import Demo3 from '../../demo/button/demo3';
-import Demo4 from '../../demo/button/demo4';
-import Demo5 from '../../demo/button/demo5';
-import Demo6 from '../../demo/button/demo6';
-import Api from '../../demo/button/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/button/demo1'
+import Demo2 from '../../demo/button/demo2'
+import Demo3 from '../../demo/button/demo3'
+import Demo4 from '../../demo/button/demo4'
+import Demo5 from '../../demo/button/demo5'
+import Demo6 from '../../demo/button/demo6'
+import Api from '../../demo/button/api'
 
 export default function ButtonPage() {
   return (
@@ -61,5 +61,5 @@ export default function ButtonPage() {
       />
       <Api />
     </>
-  );
+  )
 }

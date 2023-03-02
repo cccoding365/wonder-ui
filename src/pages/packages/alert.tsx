@@ -2,18 +2,18 @@
   @name:"Alert 警告提示"
   @group:"交互"
 */
-import React from "react";
+import React from "react"
 
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/alert/demo1';
-import Demo2 from "../../demo/alert/demo2";
-import Demo3 from "../../demo/alert/demo3";
-import Demo4 from "../../demo/alert/demo4";
-import Demo5 from "../../demo/alert/demo5";
-import Api from '../../demo/alert/api';
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/alert/demo1'
+import Demo2 from "../../demo/alert/demo2"
+import Demo3 from "../../demo/alert/demo3"
+import Demo4 from "../../demo/alert/demo4"
+import Demo5 from "../../demo/alert/demo5"
+import Api from '../../demo/alert/api'
 
-export default function AlertPage () {
+export default function AlertPage() {
   return (
     <>
       <Title title="Alert" notes="警告提示" desc="与用户进行交互，展示用户需要关注的信息。" />

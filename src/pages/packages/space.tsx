@@ -2,14 +2,14 @@
   @name:"Space 间距"
   @group:"通用"
 */
-import React from 'react';
-import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
-import Demo1 from '../../demo/space/demo1';
-import Demo2 from '../../demo/space/demo2';
-import Demo3 from '../../demo/space/demo3';
-import Demo4 from '../../demo/space/demo4';
-import Api from '../../demo/space/api';
+import React from 'react'
+import Title from '../../components/title'
+import InstanceView from '../../layout/instanceView'
+import Demo1 from '../../demo/space/demo1'
+import Demo2 from '../../demo/space/demo2'
+import Demo3 from '../../demo/space/demo3'
+import Demo4 from '../../demo/space/demo4'
+import Api from '../../demo/space/api'
 
 export default function DemoPage() {
   return (
@@ -45,5 +45,5 @@ export default function DemoPage() {
       />
       <Api />
     </div>
-  );
+  )
 }
