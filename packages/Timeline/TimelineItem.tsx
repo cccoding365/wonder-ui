@@ -1,25 +1,18 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from 'react'
+import classNames from 'classnames'
+import { TimelineItemProps } from './props'
 
-export type TimelineItemProps = {
-  color?: string;
-  dot?: React.ReactNode;
-  className?: string;
-  label?: string;
-  position?: string;
-  children?: React.ReactNode;
-};
 const TimelineItem: React.FC<TimelineItemProps> = (props) => {
-  const { color, dot, className, label, children, ...restProps } = props;
+  const { color, dot, className, label, children, ...restProps } = props
 
   const customColor = /blue|red|gray|green/.test(color || '')
     ? undefined
-    : color;
-  const itemClassName = classNames('wonder_timeline_item', className);
+    : color
+  const itemClassName = classNames('wonder_timeline_item', className)
   const dotClass = classNames('wonder_timeline_item_dot', {
     [`wonder_timeline_item_dot_${color}`]: !customColor,
     wonder_timeline_item_dot_custom: !!dot,
-  });
+  })
 
   return (
     <li {...restProps} className={itemClassName}>
@@ -33,8 +26,8 @@ const TimelineItem: React.FC<TimelineItemProps> = (props) => {
       <div className="wonder_timeline_item_content">{children}</div>
       <div className="wonder_timeline_item_vertical_line" />
     </li>
-  );
-};
+  )
+}
 TimelineItem.defaultProps = {
   color: 'blue',
   className: '',
@@ -42,6 +35,6 @@ TimelineItem.defaultProps = {
   position: '',
   dot: null,
   children: null,
-};
+}
 
-export default TimelineItem;
+export default TimelineItem

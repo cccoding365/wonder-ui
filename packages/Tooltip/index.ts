@@ -1,4 +1,4 @@
-import Tooltip from './tooltip';
+import Tooltip from './tooltip'
 
-export type { TooltipProps } from './tooltip';
-export default Tooltip;
+export type { TooltipProps } from './props'
+export default Tooltip

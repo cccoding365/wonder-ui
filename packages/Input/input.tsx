@@ -1,29 +1,14 @@
-import React, { CSSProperties } from 'react';
-import './style.scss';
-import classNames from 'classnames';
+import React from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import { InputProps } from './props'
 
-export type inputProps = {
-  style?: CSSProperties;
-  className?: string;
-  prefix?: string | React.ReactNode;
-  suffix?: string | React.ReactNode;
-  clearable?: boolean;
-  clearableFn?: () => void;
-  focus?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  blur?: () => void;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  value?: string | number;
-  type?: string;
-  showPassword?: boolean;
-  status?: 'error' | 'warning'
-};
-function Input(props: inputProps): JSX.Element {
-  const { style, className, prefix, suffix, clearable, clearableFn, focus, blur, onChange, placeholder, value, type, showPassword, status } = props;
-  const [inputValue, setInputValue] = React.useState(value || '');
-  const [pwdIcon, setPwdIcon] = React.useState('m-icon-hide');
-  const [pwdShow, setPwdShow] = React.useState(showPassword); //
-  const [inputType, setInputType] = React.useState(type);
+function Input(props: InputProps): JSX.Element {
+  const { style, className, prefix, suffix, clearable, clearableFn, focus, blur, onChange, placeholder, value, type, showPassword, status } = props
+  const [inputValue, setInputValue] = React.useState(value || '')
+  const [pwdIcon, setPwdIcon] = React.useState('m-icon-hide')
+  const [pwdShow, setPwdShow] = React.useState(showPassword) //
+  const [inputType, setInputType] = React.useState(type)
   const innerClass = classNames({
     'wonder_input_inner': true,
     [`wonder_input_inner_${status}`]: true,
@@ -31,45 +16,43 @@ function Input(props: inputProps): JSX.Element {
   const inputClass = classNames({
     'wonder_input': true,
     [className || '']: !!className,
-  });
-  const inputStyle = {
-    ...style,
-  }
+  })
+  const inputStyle = { ...style }
   React.useEffect(() => {
-    setInputValue(value as string);
+    setInputValue(value as string)
   }, [value])
   const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    onChange && onChange(e);
+    setInputValue(e.target.value)
+    onChange && onChange(e)
   }
   const inputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.keyCode === 13) {
-      e.preventDefault();
-      setInputValue(e.target.value);
-      onChange && onChange(e);
+      e.preventDefault()
+      setInputValue(e.target.value)
+      onChange && onChange(e)
     }
   }
   const handlerClearClick = () => {
-    setInputValue('');
-    clearableFn && clearableFn();
+    setInputValue('')
+    clearableFn && clearableFn()
   }
   const toggleIcon = () => {
-    setPwdShow(!pwdShow);
+    setPwdShow(!pwdShow)
     if (pwdShow) {
-      setInputType(type);
-      setPwdIcon('m-icon-hide');
+      setInputType(type)
+      setPwdIcon('m-icon-hide')
     } else {
-      setInputType('text');
-      setPwdIcon('m-icon-browse');
+      setInputType('text')
+      setPwdIcon('m-icon-browse')
     }
   }
   React.useEffect(() => {
     if (!showPassword) {
-      setInputType(type);
-      setPwdIcon('m-icon-hide');
+      setInputType(type)
+      setPwdIcon('m-icon-hide')
     } else {
-      setInputType('text');
-      setPwdIcon('m-icon-browse');
+      setInputType('text')
+      setPwdIcon('m-icon-browse')
     }
 
   }, [showPassword])
@@ -102,7 +85,7 @@ function Input(props: inputProps): JSX.Element {
         ) : null
       }
     </span>
-  );
+  )
 }
 Input.defaultProps = {
   style: '',
@@ -119,5 +102,5 @@ Input.defaultProps = {
   type: 'text',
   showPassword: false,
   status: '',
-};
-export default React.memo(Input);
+}
+export default React.memo(Input)

@@ -1,23 +1,13 @@
-import React, { useState, useRef, useImperativeHandle, useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import classNames from 'classnames';
+import React, { useState, useRef, useImperativeHandle, useEffect } from 'react'
+import { CSSTransition } from 'react-transition-group'
+import classNames from 'classnames'
+import { TooltipEleProps } from './props'
 
-interface TooltipEleProps {
-  content: string | React.ReactNode;
-  left: number;
-  top: number;
-  width: number;
-  height: number;
-  cRef: React.RefObject<any>;
-  align?: string;
-  color?: string;
-  zIndex?: number;
-}
 function TooltipEl(props: TooltipEleProps): JSX.Element {
-  const { content, left, top, width, height, cRef, align, color, zIndex } = props;
-  const divRef = useRef<HTMLDivElement>(null);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [elWidth, setElWidth] = useState(0);
+  const { content, left, top, width, height, cRef, align, color, zIndex } = props
+  const divRef = useRef<HTMLDivElement>(null)
+  const [showTooltip, setShowTooltip] = useState(false)
+  const [elWidth, setElWidth] = useState(0)
   const [style, setStyle] = useState({
     left: '',
     top: '',
@@ -60,7 +50,7 @@ function TooltipEl(props: TooltipEleProps): JSX.Element {
     handleOpen: (flag: boolean) => {
       setShowTooltip(flag)
     },
-  }));
+  }))
   useEffect(() => {
     if (divRef.current !== null) {
       setElWidth(divRef.current.clientWidth)

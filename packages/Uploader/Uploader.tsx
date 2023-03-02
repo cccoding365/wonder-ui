@@ -1,197 +1,176 @@
-import React, {
-  FC,
-  useRef,
-  PropsWithChildren,
-  useCallback,
-  useState,
-} from 'react';
-import './style.scss';
-import ajax, { ee, ajaxError } from './ajax';
-import { useEffect } from 'react';
-import Progress from '../Progress';
-import _, { template } from 'lodash';
-import classnames from 'classnames';
-import Tooltip from '../Tooltip';
+import React, { FC, useRef, PropsWithChildren, useCallback, useState } from 'react'
+import './style.scss'
+import ajax, { ee, ajaxError } from './ajax'
+import { useEffect } from 'react'
+import Progress from '../Progress'
+import _, { template } from 'lodash'
+import classnames from 'classnames'
+import Tooltip from '../Tooltip'
 
 type ExtraDataFunction = (
   file: UploadFile,
   files: UploadFile[]
-) => {} | Promise<{}>;
-type ExtraData = {} | ExtraDataFunction | undefined;
+) => {} | Promise<{}>
+type ExtraData = {} | ExtraDataFunction | undefined
 
 export interface UploaderProps {
-  name?: string;
-  action?: string;
-  accept?: string;
-  showUploadList?: boolean;
-  defaultFileList?: UploadFile[];
-  disabled?: boolean;
-  multiple?: boolean;
-  method?: string;
-  headers?: {};
-  data?: ExtraData;
-  onRemove?: (file: UploadFile) => boolean | Promise<boolean> | void;
+  name?: string
+  action?: string
+  accept?: string
+  showUploadList?: boolean
+  defaultFileList?: UploadFile[]
+  disabled?: boolean
+  multiple?: boolean
+  method?: string
+  headers?: {}
+  data?: ExtraData
+  onRemove?: (file: UploadFile) => boolean | Promise<boolean> | void
   beforeUpload?: (
     file: UploadFile,
     fileList: UploadFile[]
-  ) => boolean | Promise<UploadFile> | void;
-  onChange?: (file: UploadFile, files: UploadFile[]) => void;
+  ) => boolean | Promise<UploadFile> | void
+  onChange?: (file: UploadFile, files: UploadFile[]) => void
   customeRequest?:
-    | ((file: UploadFile, fileList: UploadFile[]) => void)
-    | undefined;
-  onProgress?: (event: ProgressEvent<EventTarget>) => void;
-  itemRender?: (file: UploadFile, fileList: UploadFile[]) => React.ReactNode;
+  | ((file: UploadFile, fileList: UploadFile[]) => void)
+  | undefined
+  onProgress?: (event: ProgressEvent<EventTarget>) => void
+  itemRender?: (file: UploadFile, fileList: UploadFile[]) => React.ReactNode
 }
 function isFunction(func: any) {
-  return typeof func === 'function';
+  return typeof func === 'function'
 }
 
 function _handleFiles(
   files: UploadFile[] | FileList,
   existData?: {}
 ): UploadFile[] {
-  let ret: UploadFile[] = [];
+  let ret: UploadFile[] = []
   if (files instanceof FileList) {
-    let obj: UploadFile = { uid: '', name: '', size: 0, progress: 0 };
+    let obj: UploadFile = { uid: '', name: '', size: 0, progress: 0 }
     for (let i = 0; i < files.length; i++) {
-      obj.uid = `upload_${String(new Date().getTime()).substr(-8)}`;
-      obj.name = files[i].name;
-      obj.size = files[i].size;
-      obj.originFileObj = files[i];
-      ret.push(obj);
+      obj.uid = `upload_${String(new Date().getTime()).substr(-8)}`
+      obj.name = files[i].name
+      obj.size = files[i].size
+      obj.originFileObj = files[i]
+      ret.push(obj)
     }
   } else {
     ret = files.map((file: UploadFile) => {
       file.uid = (file.uid as string)
         ? ''
-        : `upload_${String(new Date().getTime()).substr(-8)}`;
-      return file;
-    });
+        : `upload_${String(new Date().getTime()).substr(-8)}`
+      return file
+    })
   }
   if (existData) {
-    const existDataKeys = Object.keys(existData);
+    const existDataKeys = Object.keys(existData)
     if (existDataKeys.length > 0) {
       ret = ret.map((file) => {
         existDataKeys.forEach((k) => {
-          file[k] = existData[k];
-        });
-        return file;
-      });
+          file[k] = existData[k]
+        })
+        return file
+      })
     }
   }
-  return ret;
+  return ret
 }
 
 export interface UploadFile {
-  uid: string;
-  name: string;
-  size: number;
-  progress?: number;
-  status?: 'error' | 'success' | 'done' | 'uploading' | 'removed';
-  errorInfo?: string;
-  originFileObj?: File;
+  uid: string
+  name: string
+  size: number
+  progress?: number
+  status?: 'error' | 'success' | 'done' | 'uploading' | 'removed'
+  errorInfo?: string
+  originFileObj?: File
 }
 const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
-  const {
-    children,
-    onChange,
-    name,
-    accept,
-    disabled,
-    defaultFileList,
-    method,
-    action: url,
-    beforeUpload,
-    customeRequest,
-    data,
-    headers,
-    multiple,
-    onProgress,
-    onRemove,
-    itemRender,
-    showUploadList,
-  } = props;
-  const [, forceUpdate] = useState({});
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const { children, name, accept, disabled, defaultFileList, method,
+    action: url, beforeUpload, customeRequest, data, onChange,
+    headers, multiple, showUploadList,
+    onProgress, onRemove, itemRender } = props
+  const [, forceUpdate] = useState({})
+  const [fileList, setFileList] = useState<UploadFile[]>([])
+  const inputRef = useRef<HTMLInputElement>(null)
   const handleClick = useCallback(() => {
-    inputRef.current?.click();
-  }, []);
+    inputRef.current?.click()
+  }, [])
 
   useEffect(() => {
     if (defaultFileList && defaultFileList.length > 0) {
-      setFileList(_handleFiles(defaultFileList, { progress: 1 }));
+      setFileList(_handleFiles(defaultFileList, { progress: 1 }))
     }
-  }, []);
+  }, [])
 
   const _onProgress = useCallback(
     (event: ProgressEvent<EventTarget>, file: UploadFile) => {
-      const { total, loaded } = event;
-      const { uid } = file;
-      const percent = Number((loaded / total).toFixed(2));
+      const { total, loaded } = event
+      const { uid } = file
+      const percent = Number((loaded / total).toFixed(2))
       setFileList((fileList) => {
         const tmpList = fileList.map((file) => {
           if (file.uid === uid) {
-            file.status = 'uploading';
-            file.progress = percent;
+            file.status = 'uploading'
+            file.progress = percent
           }
-          return file;
-        });
-        return tmpList;
-      });
+          return file
+        })
+        return tmpList
+      })
       if (percent === 1) {
         if (onChange && isFunction(onChange)) {
-          file.status = 'done';
-          onChange(file, [file]);
+          file.status = 'done'
+          onChange(file, [file])
         }
         setTimeout(() => {
           setFileList((fileList) =>
             fileList.map((file) => {
               if (file.uid === uid) {
-                file.status = 'done';
+                file.status = 'done'
               }
-              return file;
+              return file
             })
-          );
-        }, 1000);
+          )
+        }, 1000)
       }
       if (onProgress && isFunction(onProgress)) {
-        onProgress(event);
+        onProgress(event)
       }
     },
     []
-  );
+  )
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     async (event) => {
       if (!event.target.files || event.target.files.length < 1) {
-        forceUpdate({});
-        return;
+        forceUpdate({})
+        return
       }
-      let tmpFiles = _handleFiles(event.target.files);
+      let tmpFiles = _handleFiles(event.target.files)
       if (onChange && isFunction(onChange)) {
-        onChange(tmpFiles[0], tmpFiles);
+        onChange(tmpFiles[0], tmpFiles)
       }
       if (beforeUpload && isFunction(beforeUpload)) {
-        const beforeUploadHandle = beforeUpload(tmpFiles[0], tmpFiles);
-        if (beforeUploadHandle === false) return;
+        const beforeUploadHandle = beforeUpload(tmpFiles[0], tmpFiles)
+        if (beforeUploadHandle === false) return
         if (beforeUploadHandle instanceof Promise) {
           try {
-            const res = await beforeUploadHandle;
+            const res = await beforeUploadHandle
             if (Object.prototype.toString.call(res) === '[object Object]') {
-              tmpFiles = [res];
+              tmpFiles = [res]
             }
           } catch (error) {
-            console.error('beforeUpload reject error:', error);
-            return;
+            console.error('beforeUpload reject error:', error)
+            return
           }
         }
       }
       if (customeRequest && isFunction(customeRequest)) {
-        customeRequest(tmpFiles[0], tmpFiles);
+        customeRequest(tmpFiles[0], tmpFiles)
       } else {
         tmpFiles.forEach((file) => {
-          setFileList((fileList) => [...fileList, file]);
+          setFileList((fileList) => [...fileList, file])
           ajax({
             file,
             fileKey: name!,
@@ -200,54 +179,54 @@ const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
             onProgress: _onProgress,
             method: method || 'POST',
             extraData: data,
-          });
-        });
+          })
+        })
       }
     },
     [onChange, data, url, headers, beforeUpload, customeRequest]
-  );
+  )
 
   useEffect(() => {
     const listener = function ({ error, file: errorFile }) {
       setFileList((fileList) => {
-        const index = fileList.findIndex((file) => file.uid === errorFile.uid);
+        const index = fileList.findIndex((file) => file.uid === errorFile.uid)
         if (index === -1) {
-          return fileList;
+          return fileList
         } else {
-          fileList[index].status = 'error';
-          fileList[index].errorInfo = error;
-          return [...fileList];
+          fileList[index].status = 'error'
+          fileList[index].errorInfo = error
+          return [...fileList]
         }
-      });
-    };
-    ee.on(ajaxError, listener);
+      })
+    }
+    ee.on(ajaxError, listener)
     return () => {
-      ee.off(ajaxError, listener);
-    };
-  }, []);
+      ee.off(ajaxError, listener)
+    }
+  }, [])
 
   const deleteFile = useCallback(
     async (f: UploadFile) => {
-      let remove = true;
+      let remove = true
       if (onRemove) {
         if (isFunction(onRemove)) {
-          remove = onRemove(f) as boolean;
+          remove = onRemove(f) as boolean
         } else if (onRemove instanceof Promise) {
           try {
-            remove = await onRemove;
+            remove = await onRemove
           } catch (error) {
-            remove = false;
+            remove = false
           }
         }
       }
       if (remove !== false) {
         setFileList((fileList) =>
           fileList.filter((file) => file.uid !== f.uid)
-        );
+        )
       }
     },
     [onRemove]
-  );
+  )
 
   const getDisplayItem = useCallback(
     (item: UploadFile) => (
@@ -282,7 +261,7 @@ const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
       </p>
     ),
     [deleteFile]
-  );
+  )
 
   const defaultItemRender = useCallback((item: UploadFile) => {
     return (
@@ -303,8 +282,8 @@ const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
           )}
         </p>
       </div>
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className="wonder-uploader">
@@ -328,9 +307,9 @@ const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
         </ul>
       )}
     </div>
-  );
-};
-export default Uploader;
+  )
+}
+export default Uploader
 
 Uploader.defaultProps = {
   name: 'file',
@@ -343,4 +322,4 @@ Uploader.defaultProps = {
   headers: {},
   data: {},
   showUploadList: true,
-};
+}

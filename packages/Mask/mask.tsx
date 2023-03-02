@@ -1,32 +1,20 @@
-import React, { CSSProperties } from 'react';
-import './style.scss';
-import classNames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import React from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import { CSSTransition } from 'react-transition-group'
+import { MaskProps } from './props'
 
-export type MaskProps = {
-  style?: CSSProperties;
-  className?: string;
-  zIndex?: number;
-  visible: boolean;
-  children?: React.ReactNode;
-  background?: string;
-  maskClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-};
 export default function Mask(props: MaskProps): JSX.Element {
-  const { style, className, zIndex, visible, children, background, maskClick } = props;
-  const [showMask, setShowMask] = React.useState(false);
+  const { style, className, zIndex, visible, children, background, maskClick } = props
+  const [showMask, setShowMask] = React.useState(false)
   const maskClass = classNames({
     'wonder_mask': true,
     [className || '']: !!className,
-  });
-  const maskStyle = {
-    ...style,
-    zIndex,
-    background,
-  }
+  })
+  const maskStyle = { ...style, zIndex, background, }
   React.useEffect(() => {
-    setShowMask(visible);
-  }, [visible]);
+    setShowMask(visible)
+  }, [visible])
   return (
     <CSSTransition
       in={showMask}
@@ -39,7 +27,7 @@ export default function Mask(props: MaskProps): JSX.Element {
       </div>
     </CSSTransition >
 
-  );
+  )
 }
 Mask.defaultProps = {
   style: '',
@@ -48,4 +36,4 @@ Mask.defaultProps = {
   children: null,
   background: 'rgba(0,0,0,0.5)',
   maskClick: () => { },
-};
+}

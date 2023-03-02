@@ -1,29 +1,23 @@
-import React, {
-  useCallback,
-  useEffect,
-  useState,
-  FC,
-  CSSProperties,
-} from 'react';
-import classnames from 'classnames';
-import './style.scss';
+import React, { useCallback, useEffect, useState, FC, CSSProperties } from 'react'
+import classnames from 'classnames'
+import './style.scss'
 
-type textKey = 'nextPage' | 'prevPage' | 'total' | 'page' | 'item';
+type textKey = 'nextPage' | 'prevPage' | 'total' | 'page' | 'item'
 export interface PaginationProps {
-  pageSize?: number;
-  onPageSizeChange?: (pageSize: number) => void;
-  onPageChange?: (page: number, pageSize: number) => void;
-  total: number;
-  style?: CSSProperties;
-  pageSizeOptions?: number[];
+  pageSize?: number
+  onPageSizeChange?: (pageSize: number) => void
+  onPageChange?: (page: number, pageSize: number) => void
+  total: number
+  style?: CSSProperties
+  pageSizeOptions?: number[]
   text?: {
-    nextPage: string;
-    prevPage: string;
-    total: string;
-    page: string;
-    item: string;
-  };
-  className?: string;
+    nextPage: string
+    prevPage: string
+    total: string
+    page: string
+    item: string
+  }
+  className?: string
 }
 
 const Pagination: FC<PaginationProps> = ({
@@ -36,55 +30,55 @@ const Pagination: FC<PaginationProps> = ({
   className: propClassName,
   text,
 }) => {
-  const [pageNums, setPageNums] = useState<number[]>([]);
-  const [lastPage, setLastPage] = useState<number>(1);
-  const [current, setCurrent] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(1);
+  const [pageNums, setPageNums] = useState<number[]>([])
+  const [lastPage, setLastPage] = useState<number>(1)
+  const [current, setCurrent] = useState<number>(1)
+  const [pageSize, setPageSize] = useState<number>(1)
   useEffect(() => {
-    setPageSize(propPageSize);
-  }, [propPageSize]);
+    setPageSize(propPageSize)
+  }, [propPageSize])
   useEffect(() => {
-    const pages = Math.ceil(total / pageSize);
-    const tmp: number[] = [];
+    const pages = Math.ceil(total / pageSize)
+    const tmp: number[] = []
     for (let i = 1; i <= pages; i++) {
-      tmp.push(i);
+      tmp.push(i)
     }
-    setPageNums(tmp);
-    setLastPage(pages);
-  }, [total, pageSize]);
+    setPageNums(tmp)
+    setLastPage(pages)
+  }, [total, pageSize])
 
   const _onPageNumClick = useCallback(
     (num: number) => {
-      if (Number(num) === Number(current)) return;
+      if (Number(num) === Number(current)) return
       if (num > lastPage) {
-        num = lastPage;
+        num = lastPage
       } else if (num < 1) {
-        num = 1;
+        num = 1
       }
-      setCurrent(num);
-      typeof onPageChange === 'function' && onPageChange(num, pageSize);
+      setCurrent(num)
+      typeof onPageChange === 'function' && onPageChange(num, pageSize)
     },
     [setCurrent, lastPage, onPageChange, current, pageSize]
-  );
+  )
 
   const _onPageSizeChange: React.ChangeEventHandler<HTMLSelectElement> =
     useCallback(
       (e) => {
-        const { value } = e.currentTarget;
-        setCurrent(1);
-        setPageSize(Number(value));
+        const { value } = e.currentTarget
+        setCurrent(1)
+        setPageSize(Number(value))
         typeof onPageSizeChange === 'function' &&
-          onPageSizeChange(Number(value));
+          onPageSizeChange(Number(value))
       },
       [onPageSizeChange]
-    );
+    )
 
   const getDisplayText = useCallback(
     (key: textKey) => {
-      return text![key];
+      return text![key]
     },
     [text]
-  );
+  )
 
   return (
     <section
@@ -129,7 +123,7 @@ const Pagination: FC<PaginationProps> = ({
               >
                 <span>{num}</span>
               </li>
-            );
+            )
           })}
         <li
           title={getDisplayText('nextPage')}
@@ -152,13 +146,13 @@ const Pagination: FC<PaginationProps> = ({
             <option key={item} value={item}>{`${item} ${getDisplayText(
               'item'
             )}/${getDisplayText('page')}`}</option>
-          );
+          )
         })}
       </select>
     </section>
-  );
-};
-Pagination.displayName = 'Pagination';
+  )
+}
+Pagination.displayName = 'Pagination'
 Pagination.defaultProps = {
   pageSize: 10,
   pageSizeOptions: [10, 20, 50, 100, 200],
@@ -173,5 +167,5 @@ Pagination.defaultProps = {
     page: '页',
     item: '条',
   },
-};
-export default Pagination;
+}
+export default Pagination

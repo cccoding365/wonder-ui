@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Modal from './Modal';
-import PopoverItem from './popoverItem';
-import './style.scss';
+import React, { useEffect, useRef, useState } from 'react'
+import Modal from './Modal'
+import PopoverItem from './popoverItem'
+import './style.scss'
 
 export interface PopoverProps {
-  children: React.ReactNode;
-  content: string | React.ReactNode;
-  title: string;
-  placement?: 'left' | 'right' | 'top' | 'bottom';
-  defaultOpen?: boolean | undefined; // undefined表示未传递defaultOpen参数
-  visible?: boolean | undefined; // undefined表示未传递visible参数
-  onOpenChange?: (visible: boolean) => void;
-  trigger?: 'hover' | 'focus' | 'click';
-  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
+  children: React.ReactNode
+  content: string | React.ReactNode
+  title: string
+  placement?: 'left' | 'right' | 'top' | 'bottom'
+  defaultOpen?: boolean | undefined // undefined表示未传递defaultOpen参数
+  visible?: boolean | undefined // undefined表示未传递visible参数
+  onOpenChange?: (visible: boolean) => void
+  trigger?: 'hover' | 'focus' | 'click'
+  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
 }
 
 function Popover(props: PopoverProps): JSX.Element {
@@ -26,110 +26,110 @@ function Popover(props: PopoverProps): JSX.Element {
     visible,
     trigger = 'hover',
     getPopupContainer,
-  } = props;
-  const [isHidden, setIsHidden] = useState(true);
-  const popoverComponentRef = useRef<HTMLDivElement>(null);
+  } = props
+  const [isHidden, setIsHidden] = useState(true)
+  const popoverComponentRef = useRef<HTMLDivElement>(null)
   const [popOffset, setPopOffset] = useState({
     top: 0,
     left: 0,
     clientHeight: 0,
     clientWidth: 0,
-  });
+  })
 
   const containerDom =
     (getPopupContainer &&
       getPopupContainer(popoverComponentRef?.current || document.body)) ||
-    document.body;
+    document.body
 
-  let componentLeft: number;
-  let componentTop: number;
-  let componentWidth: number;
-  let componentHeight: number;
+  let componentLeft: number
+  let componentTop: number
+  let componentWidth: number
+  let componentHeight: number
 
   const getPos = () => {
     const popoverComponentOffset =
-      popoverComponentRef.current?.getBoundingClientRect();
-    componentLeft = popoverComponentOffset?.left || 0;
-    componentTop = popoverComponentOffset?.top || 0;
-    componentHeight = popoverComponentRef.current?.clientHeight || 0;
-    componentWidth = popoverComponentRef.current?.clientWidth || 0;
-  };
+      popoverComponentRef.current?.getBoundingClientRect()
+    componentLeft = popoverComponentOffset?.left || 0
+    componentTop = popoverComponentOffset?.top || 0
+    componentHeight = popoverComponentRef.current?.clientHeight || 0
+    componentWidth = popoverComponentRef.current?.clientWidth || 0
+  }
   // 执行onOpenChange事件
   const onPopoverChange = (e: boolean): void => {
     if (onOpenChange) {
-      onOpenChange(!e);
+      onOpenChange(!e)
     }
-  };
+  }
   // Hidden变化回调
   const onChangeHidden = (e: boolean): void => {
-    setIsHidden(e);
-    onPopoverChange(e);
-  };
+    setIsHidden(e)
+    onPopoverChange(e)
+  }
   // 弹出气泡卡片
   const openPopover = (): void => {
-    onChangeHidden(false);
+    onChangeHidden(false)
     setPopOffset({
       top: componentTop,
       left: componentLeft,
       clientHeight: componentHeight,
       clientWidth: componentWidth,
-    });
-  };
+    })
+  }
   useEffect(() => {
     if (visible !== undefined) {
-      onChangeHidden(!visible);
+      onChangeHidden(!visible)
     }
-  }, [visible]);
+  }, [visible])
 
   useEffect(() => {
     if (visible || defaultOpen) {
-      getPos();
-      openPopover();
+      getPos()
+      openPopover()
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    getPos();
-  }, [isHidden]);
+    getPos()
+  }, [isHidden])
 
   // 关闭气泡卡片
   const closePopover = (): void => {
-    onChangeHidden(true);
-  };
+    onChangeHidden(true)
+  }
 
   const onHoverOpen = (): void => {
     // if (visible || visible === undefined) {
     //   openPopover();
     // }
-    openPopover();
-  };
+    openPopover()
+  }
 
   const onHoverClose = (e: React.MouseEvent<HTMLDivElement>): void => {
     if (
       visible ||
       ((e.relatedTarget as HTMLElement).parentNode as HTMLElement).className ===
-        'wonder_popover'
+      'wonder_popover'
     )
-      return;
-    closePopover();
-  };
+      return
+    closePopover()
+  }
 
   const onFocusOpen = (): void => {
-    openPopover();
-  };
+    openPopover()
+  }
   const onFocusClose = (): void => {
-    if (visible) return;
-    closePopover();
-  };
+    if (visible) return
+    closePopover()
+  }
 
   const onClick = (): void => {
     if (isHidden) {
-      openPopover();
+      openPopover()
     } else {
-      if (visible) return;
-      closePopover();
+      if (visible) return
+      closePopover()
     }
-  };
+  }
 
   return (
     <>
@@ -158,16 +158,16 @@ function Popover(props: PopoverProps): JSX.Element {
         />
       </Modal>
     </>
-  );
+  )
 }
 
 Popover.defaultProps = {
   placement: 'left',
   defaultOpen: undefined,
   visible: undefined,
-  onOpenChange: () => {},
+  onOpenChange: () => { },
   trigger: 'hover',
-  getPopupContainer: () => {},
-};
+  getPopupContainer: () => { },
+}
 
-export default React.memo(Popover);
+export default React.memo(Popover)

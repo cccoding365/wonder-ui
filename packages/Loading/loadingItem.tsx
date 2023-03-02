@@ -1,37 +1,27 @@
-import React, { CSSProperties, useImperativeHandle } from 'react';
-import classNames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import React, { useImperativeHandle } from 'react'
+import classNames from 'classnames'
+import { CSSTransition } from 'react-transition-group'
+import { LoadingProps } from "./props"
 
-export type LoadingProps = {
-  style?: CSSProperties;
-  className?: string;
-  text?: string;
-  background?: string;
-  open: boolean;
-  icon?: string;
-  target?: string,
-  duration?: number;
-  cRef: React.RefObject<any>;
-};
 export default function LoadingEl(props: LoadingProps): JSX.Element {
-  const { style, className, text, background, open, icon, duration, target, cRef } = props;
-  const [showLoading, setShowLoading] = React.useState(false);
+  const { style, className, text, background, open, icon, duration, target, cRef } = props
+  const [showLoading, setShowLoading] = React.useState(false)
   const loadingClass = classNames({
     'wonder_loading': true,
     [className || '']: !!className,
-  });
+  })
   useImperativeHandle(cRef, () => ({
     handleOpen: (flag: boolean) => {
       setShowLoading(flag)
     },
-  }));
+  }))
   React.useEffect(() => {
     if (duration as number > 0) {
       setTimeout(() => {
         setShowLoading(false)
         setTimeout(() => {
-          const container = target === 'body' ? document.body : document.querySelector(target as string);
-          container?.removeChild(document.querySelector('.wonder_loading_container') as Node);
+          const container = target === 'body' ? document.body : document.querySelector(target as string)
+          container?.removeChild(document.querySelector('.wonder_loading_container') as Node)
         }, 300)
       }, duration as number)
     }
@@ -59,7 +49,7 @@ export default function LoadingEl(props: LoadingProps): JSX.Element {
       </div>
     </CSSTransition>
 
-  );
+  )
 }
 LoadingEl.defaultProps = {
   style: '',
@@ -69,4 +59,4 @@ LoadingEl.defaultProps = {
   icon: 'm-icon-loading1',
   duration: 0,
   target: 'body',
-};
+}

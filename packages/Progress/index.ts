@@ -1,4 +1,4 @@
-import Progress from './progress';
+import Progress from './progress'
 
-export type { ProgressProps } from './progress';
-export default Progress;
+export type { ProgressProps } from './props'
+export default Progress

@@ -1,4 +1,4 @@
-import Space from './space';
+import Space from './space'
 
-export type { SpaceProps } from './space';
-export default Space;
+export type { SpaceProps } from './props'
+export default Space

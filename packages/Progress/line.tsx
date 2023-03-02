@@ -1,24 +1,12 @@
-import React from 'react';
-import type { ProgressProps } from './progress';
+import React from 'react'
+import type { ProgressProps } from './props'
 
 interface LineProps extends ProgressProps {
-  /**
-   * 线条高度
-   * @default 6
-   */
-  height?: number;
+  height?: number
 }
 
 function Line(props: LineProps): JSX.Element {
-  const {
-    className,
-    style,
-    percent,
-    height,
-    strokeColor,
-    trailColor,
-    children,
-  } = props;
+  const { className, style, percent, height, strokeColor, trailColor, children } = props
 
   return (
     <>
@@ -43,11 +31,11 @@ function Line(props: LineProps): JSX.Element {
       </div>
       {children}
     </>
-  );
+  )
 }
 
 Line.defaultProps = {
   height: 6,
-};
+}
 
-export default Line;
+export default Line

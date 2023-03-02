@@ -1,4 +1,4 @@
-import Swiper from './swiper';
+import Swiper from './swiper'
 
-export type { SwiperProps } from './swiper';
-export default Swiper;
+export type { SwiperProps } from './props'
+export default Swiper

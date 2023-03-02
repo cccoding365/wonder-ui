@@ -1,4 +1,4 @@
-import Timeline from './Timeline';
+import Timeline from './Timeline'
 
-export type { TimelineProps } from './Timeline';
-export default Timeline;
+export type { TimelineProps } from './props'
+export default Timeline

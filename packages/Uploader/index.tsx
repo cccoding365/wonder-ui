@@ -1,5 +1,5 @@
-import Uploader from './Uploader';
-import type { UploaderProps, UploadFile } from './Uploader';
+import Uploader from './Uploader'
+import type { UploaderProps, UploadFile } from './Uploader'
 
-export default Uploader;
-export { UploadFile, UploaderProps };
+export default Uploader
+export { UploadFile, UploaderProps }

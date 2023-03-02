@@ -1,25 +1,15 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable no-nested-ternary */
-import React, { CSSProperties } from 'react';
-import './style.scss';
-import classNames from 'classnames';
-import { Empty } from "..";
+import React from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import { Empty } from ".."
+import { TableProps } from './props'
 
-export type TableProps = {
-  headStyle?: CSSProperties;
-  bodyStyle?: CSSProperties;
-  className?: string;
-  border?: boolean;
-  columns: Array<any>;
-  dataSource: Array<any>;
-  size?: 'large' | 'middle' | 'small';
-};
 export default function Table(props: TableProps): JSX.Element {
-  const { headStyle, bodyStyle, className, border, columns, dataSource, size } = props;
+  const { headStyle, bodyStyle, className, border, columns, dataSource, size } = props
   const tableClass = classNames({
     'wonder_table_inner': true,
     [className || '']: !!className,
-  });
+  })
   const theadTrClass = classNames({
     'wonder_table_thead_th': true,
     'wonder_table_thead_th_boder': border,
@@ -85,7 +75,7 @@ export default function Table(props: TableProps): JSX.Element {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 Table.defaultProps = {
   headStyle: '',
@@ -93,4 +83,4 @@ Table.defaultProps = {
   className: '',
   border: false,
   size: 'large',
-};
+}

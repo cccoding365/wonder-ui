@@ -1,36 +1,15 @@
-import React from 'react';
-import type { ProgressProps } from './progress';
-import './style.scss';
+import React from 'react'
+import type { ProgressProps } from './props'
+import './style.scss'
 
 interface CircleProps extends ProgressProps {
-  /**
-   * 圆弧的宽度
-   * @default  8
-   */
-  strokeWidth?: number;
-  /**
-   * 圆弧末尾使用的形状
-   * @default butt
-   */
-  strokeLinecap?: 'butt' | 'round';
-  /**
-   * 圆环大小
-   * @default 120
-   */
-  size?: number;
+  strokeWidth?: number
+  strokeLinecap?: 'butt' | 'round'
+  size?: number
 }
 
 function Circle(props: CircleProps): JSX.Element {
-  const {
-    percent = 0,
-    size = 120,
-    strokeColor,
-    strokeWidth,
-    strokeLinecap,
-    children,
-    className,
-    style,
-  } = props;
+  const { percent = 0, size = 120, strokeColor, strokeWidth, strokeLinecap, children, className, style } = props
 
   return (
     <div className={className} style={{ ...style }}>
@@ -67,12 +46,12 @@ function Circle(props: CircleProps): JSX.Element {
       </svg>
       {children && <div className="content">{children}</div>}
     </div>
-  );
+  )
 }
 
 Circle.defaultProps = {
   size: 120,
   strokeWidth: 8,
   strokeLinecap: 'butt',
-};
-export default Circle;
+}
+export default Circle
