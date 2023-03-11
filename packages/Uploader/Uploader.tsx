@@ -6,36 +6,8 @@ import Progress from '../Progress'
 import _, { template } from 'lodash'
 import classnames from 'classnames'
 import Tooltip from '../Tooltip'
+import { UploadFile, UploaderProps } from './props'
 
-type ExtraDataFunction = (
-  file: UploadFile,
-  files: UploadFile[]
-) => {} | Promise<{}>
-type ExtraData = {} | ExtraDataFunction | undefined
-
-export interface UploaderProps {
-  name?: string
-  action?: string
-  accept?: string
-  showUploadList?: boolean
-  defaultFileList?: UploadFile[]
-  disabled?: boolean
-  multiple?: boolean
-  method?: string
-  headers?: {}
-  data?: ExtraData
-  onRemove?: (file: UploadFile) => boolean | Promise<boolean> | void
-  beforeUpload?: (
-    file: UploadFile,
-    fileList: UploadFile[]
-  ) => boolean | Promise<UploadFile> | void
-  onChange?: (file: UploadFile, files: UploadFile[]) => void
-  customeRequest?:
-  | ((file: UploadFile, fileList: UploadFile[]) => void)
-  | undefined
-  onProgress?: (event: ProgressEvent<EventTarget>) => void
-  itemRender?: (file: UploadFile, fileList: UploadFile[]) => React.ReactNode
-}
 function isFunction(func: any) {
   return typeof func === 'function'
 }
@@ -76,15 +48,6 @@ function _handleFiles(
   return ret
 }
 
-export interface UploadFile {
-  uid: string
-  name: string
-  size: number
-  progress?: number
-  status?: 'error' | 'success' | 'done' | 'uploading' | 'removed'
-  errorInfo?: string
-  originFileObj?: File
-}
 const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
   const { children, name, accept, disabled, defaultFileList, method,
     action: url, beforeUpload, customeRequest, data, onChange,
@@ -309,7 +272,6 @@ const Uploader: FC<PropsWithChildren<UploaderProps>> = (props) => {
     </div>
   )
 }
-export default Uploader
 
 Uploader.defaultProps = {
   name: 'file',
@@ -323,3 +285,5 @@ Uploader.defaultProps = {
   data: {},
   showUploadList: true,
 }
+
+export default Uploader
