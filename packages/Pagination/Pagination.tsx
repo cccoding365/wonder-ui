@@ -1,24 +1,7 @@
-import React, { useCallback, useEffect, useState, FC, CSSProperties } from 'react'
+import React, { useCallback, useEffect, useState, FC } from 'react'
 import classnames from 'classnames'
 import './style.scss'
-
-type textKey = 'nextPage' | 'prevPage' | 'total' | 'page' | 'item'
-export interface PaginationProps {
-  pageSize?: number
-  onPageSizeChange?: (pageSize: number) => void
-  onPageChange?: (page: number, pageSize: number) => void
-  total: number
-  style?: CSSProperties
-  pageSizeOptions?: number[]
-  text?: {
-    nextPage: string
-    prevPage: string
-    total: string
-    page: string
-    item: string
-  }
-  className?: string
-}
+import { PaginationProps, textKey } from './props'
 
 const Pagination: FC<PaginationProps> = ({
   pageSize: propPageSize = 10,
