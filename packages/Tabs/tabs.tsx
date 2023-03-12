@@ -1,19 +1,8 @@
 import React, { FC, FunctionComponentElement, MouseEvent, useState } from 'react'
 import classNames from 'classnames'
 import TabsItem, { TabsItemProps } from './tabsItem'
-
 import './style.scss'
-
-/** 卡片和线 */
-export type TabsType = 'line' | 'card'
-
-export interface TabsProps {
-    className?: string
-    defaultActiveKey?: number
-    type?: TabsType
-    onTabClick?: (selectedKey: number) => void
-    children: React.ReactNode
-}
+import { TabsProps } from './props'
 
 const RootTab: FC<TabsProps> = ({
     className,
