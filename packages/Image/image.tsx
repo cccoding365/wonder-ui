@@ -1,28 +1,17 @@
-import React, { CSSProperties } from 'react';
-import './style.scss';
-import classNames from 'classnames';
-import Preview from './preview';
+import React from 'react'
+import './style.scss'
+import classNames from 'classnames'
+import Preview from './preview'
+import { ImageProps } from './props'
 
-export type ImageProps = {
-  style?: CSSProperties;
-  className?: string;
-  src: string;
-  alt?: string;
-  width?: string;
-  height?: string;
-  fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
-  preview?: boolean;
-  previewList?: Array<string>;
-  toIndex?: number;
-};
 export default function Image(props: ImageProps): JSX.Element {
-  const { style, className, src, alt, width, height, fit, preview, previewList, toIndex } = props;
-  const [previewShow, setPreviewShow] = React.useState(false);
+  const { style, className, src, alt, width, height, fit, preview, previewList, toIndex } = props
+  const [previewShow, setPreviewShow] = React.useState(false)
   const [imgList, setImgList] = React.useState<Array<string>>([])
   const imageClass = classNames({
     'wonder_image': true,
     [className || '']: !!className,
-  });
+  })
   const imageStyle = {
     ...style,
     width,
@@ -33,15 +22,15 @@ export default function Image(props: ImageProps): JSX.Element {
   const handlerPreviewClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     if (preview) {
       if (previewList && previewList.length > 1) {
-        setImgList(previewList);
+        setImgList(previewList)
       } else {
-        setImgList([e.currentTarget.src]);
+        setImgList([e.currentTarget.src])
       }
-      setPreviewShow(true);
+      setPreviewShow(true)
     }
   }
   const closePreview = () => {
-    setPreviewShow(false);
+    setPreviewShow(false)
   }
   return (
     <>
@@ -55,7 +44,7 @@ export default function Image(props: ImageProps): JSX.Element {
         />
       }
     </>
-  );
+  )
 }
 Image.defaultProps = {
   style: '',
@@ -67,4 +56,4 @@ Image.defaultProps = {
   preview: false,
   previewList: [],
   toIndex: 0,
-};
+}

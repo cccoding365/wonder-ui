@@ -1,4 +1,4 @@
-import Image from './image';
+import Image from './image'
 
-export type { ImageProps } from './image';
-export default Image;
+export type { ImageProps } from './props'
+export default Image

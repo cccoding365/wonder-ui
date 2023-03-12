@@ -1,16 +1,11 @@
-import React from "react";
-import { Image, Mask } from "..";
-import './style.scss';
+import React from "react"
+import { Image, Mask } from ".."
+import './style.scss'
+import { PreviewProps } from './props'
 
-export type PreviewProps = {
-  previewList?: Array<string>;
-  show?: boolean;
-  closePreview?: () => void;
-  locateIndex?: number;
-};
 export default function Preview(props: PreviewProps): JSX.Element {
-  const { previewList, show, closePreview, locateIndex } = props;
-  const [index, setIndex] = React.useState(locateIndex);
+  const { previewList, show, closePreview, locateIndex } = props
+  const [index, setIndex] = React.useState(locateIndex)
   const [styles, setStyles] = React.useState({
     transform: 'scale3d(1, 1, 1) rotate(0deg)',
   })
@@ -29,7 +24,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
         rotate: 0,
       })
     }, 250)
-  };
+  }
   // console.log('previewList', previewList)
   // 左旋转
   const leftRotate = () => {
@@ -40,7 +35,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
     setStyles({
       transform: `scale3d(${params.scale}, ${params.scale}, 1) rotate(${params.rotate}deg)`,
     })
-  };
+  }
   // 右旋转
   const rightRotate = () => {
     setParams({
@@ -50,7 +45,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
     setStyles({
       transform: `scale3d(${params.scale}, ${params.scale}, 1) rotate(${params.rotate}deg)`,
     })
-  };
+  }
   // 放大
   const scalebig = () => {
     setParams({
@@ -60,7 +55,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
     setStyles({
       transform: `scale3d(${params.scale}, ${params.scale}, 1) rotate(${params.rotate}deg)`,
     })
-  };
+  }
   // 缩小
   const scalesmall = () => {
     setParams({
@@ -70,7 +65,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
     setStyles({
       transform: `scale3d(${params.scale}, ${params.scale}, 1) rotate(${params.rotate}deg)`,
     })
-  };
+  }
   // 监测鼠标滚轮事件进行放大缩小
   const handlerWheel = (e: any) => {
     if (e.deltaY > 0) {
@@ -78,14 +73,14 @@ export default function Preview(props: PreviewProps): JSX.Element {
     } else {
       scalebig()
     }
-  };
+  }
   // 绑定鼠标滚动事件
   React.useEffect(() => {
-    document.addEventListener('wheel', handlerWheel, false);
+    document.addEventListener('wheel', handlerWheel, false)
     return () => {
-      document.removeEventListener('wheel', handlerWheel, false);
-    };
-  }, []);
+      document.removeEventListener('wheel', handlerWheel, false)
+    }
+  }, [])
   // 上一张
   const previous = () => {
     setStyles({
@@ -100,7 +95,7 @@ export default function Preview(props: PreviewProps): JSX.Element {
       return
     }
     setIndex((index as number) - 1)
-  };
+  }
   // 下一张
   const next = () => {
     setStyles({
