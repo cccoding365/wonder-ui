@@ -1,33 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
-import hljs from 'highlight.js';
-import { Message, Tooltip } from '../../packages';
+import React, { useState, useEffect, useRef } from 'react'
+import hljs from 'highlight.js'
+import { Message, Tooltip } from '../../packages'
 
 export type codeVoewProps = {
-  path: string;
-  showView?: boolean;
-  showCopy?: boolean;
-  showCode?: boolean;
-};
+  path: string
+  showView?: boolean
+  showCopy?: boolean
+  showCode?: boolean
+}
 export default function CodeView(props: codeVoewProps) {
-  const { path, showView, showCopy, showCode } = props;
-  const inputRef = useRef<HTMLTextAreaElement>(null);
-  const [code, setCode] = useState('');
-  const [openCode, setOpenCode] = useState(showCode || false);
-  const filePath = `/src/demo/${path}.tsx?raw`;
-  const filePath1 = `/src/demo/${path}.tsx`;
+  const { path, showView, showCopy, showCode } = props
+  const inputRef = useRef<HTMLTextAreaElement>(null)
+  const [code, setCode] = useState('')
+  const [openCode, setOpenCode] = useState(showCode || false)
+  const filePath = `/src/demo/${path}.tsx?raw`
+  const filePath1 = `/src/demo/${path}.tsx`
   // const isDev = import.meta.env.MODE === "development";
   useEffect(() => {
     async function getcontent() {
       // if (isDev) {
       const res = (await import(/* @vite-ignore */ filePath)).default
-      setCode(res);
+      setCode(res)
       // } else {
       //   const res1 = await fetch(filePath1).then((res) => res.text())
       //   setCode(res1)
       // }
     }
     getcontent()
-  }, [filePath, filePath1]);
+  }, [filePath, filePath1])
   useEffect(() => {
     // 配置 highlight.js
     hljs.configure({
@@ -47,24 +47,24 @@ export default function CodeView(props: codeVoewProps) {
         'c++',
         'c#',
       ],
-    });
+    })
     // 获取到内容中所有的code标签
     setTimeout(() => {
-      const codes = document.querySelectorAll('pre code');
+      const codes = document.querySelectorAll('pre code')
       codes.forEach((el) => {
         // 让code进行高亮
-        hljs.highlightElement(el as HTMLElement);
-      });
-    }, 500);
-  }, []);
+        hljs.highlightElement(el as HTMLElement)
+      })
+    }, 500)
+  }, [])
   const copyCode = () => {
     (inputRef.current as HTMLTextAreaElement).value = code;
-    (inputRef.current as HTMLTextAreaElement).select();
+    (inputRef.current as HTMLTextAreaElement).select()
     if (document.execCommand("copy")) {
-      document.execCommand("copy");
-      Message.success('复制成功');
+      document.execCommand("copy")
+      Message.success('复制成功')
     } else {
-      Message.success('复制成功');
+      Message.success('复制成功')
     }
   }
   return (
@@ -92,7 +92,7 @@ export default function CodeView(props: codeVoewProps) {
       </div>
       <textarea id="inputCopy" ref={inputRef} />
     </>
-  );
+  )
 }
 CodeView.defaultProps = {
   showView: true,
