@@ -4,8 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 export type MenuProps = {
   showMenu?: boolean
 }
+
 function Menu(props: MenuProps): JSX.Element {
-  // 获取updateLog的最后一项
   const { showMenu } = props
   const navigate = useNavigate()
   const location = useLocation()
@@ -32,6 +32,7 @@ function Menu(props: MenuProps): JSX.Element {
   useEffect(() => {
     setMenuIndex(sessionStorage.getItem('mIndex') ? Number(sessionStorage.getItem('mIndex')) : 1)
   }, [location.pathname])
+  
   return (
     <div>
       {showMenu ? (
@@ -41,11 +42,15 @@ function Menu(props: MenuProps): JSX.Element {
           </div>
           <div className="menuinnerBox">
             <div className="menuitemBox">
-              {
-                menulist.map((item: any, index: number) => (
-                  <li key={index} className={menuIndex === index ? 'active' : ''} onClick={() => menuClick(index, item.link)}>{item.name}</li>
-                ))
-              }
+              {menulist.map((item: any, index: number) => (
+                <li
+                  key={index}
+                  className={menuIndex === index ? 'active' : ''}
+                  onClick={() => menuClick(index, item.link)}
+                >
+                  {item.name}
+                </li>
+              ))}
             </div>
           </div>
         </div>
@@ -53,7 +58,9 @@ function Menu(props: MenuProps): JSX.Element {
     </div>
   )
 }
+
 Menu.defaultProps = {
   showMenu: true,
 }
+
 export default React.memo(Menu)
