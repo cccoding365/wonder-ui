@@ -1,10 +1,9 @@
-// 路由配置
-import React from 'react';
-import IndexPage from '../../pages/public/index';
-import HomePage from '../../pages/public/home';
-import LayoutPage from '../../pages/public/layout';
-import Nofound from '../../pages/public/404';
-import Intro from '../../pages/public/intro';
+import React from 'react'
+import IndexPage from '../../pages/public/index'
+import HomePage from '../../pages/public/home'
+import LayoutPage from '../../pages/public/layout'
+import Nofound from '../../pages/public/404'
+import Intro from '../../pages/public/intro'
 import PackagesRouter from './packages'
 
 const BaseRouter: any = [
@@ -25,7 +24,7 @@ const BaseRouter: any = [
       },
       {
         path: '/react/*',
-        element: <LayoutPage />, // 二级路由
+        element: <LayoutPage />,
         children: PackagesRouter,
         group: '快速上手',
       }
@@ -35,5 +34,6 @@ const BaseRouter: any = [
     path: '/:pathMatch(.*)',
     element: <Nofound />,
   },
-];
-export default BaseRouter;
+]
+
+export default BaseRouter
