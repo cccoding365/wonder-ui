@@ -1,10 +1,14 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import typescript from '@rollup/plugin-typescript';
-import { resolve } from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import typescript from "@rollup/plugin-typescript";
+import { resolve } from "path";
 
 const resolvePath = (str: string) => resolve(__dirname, str);
 export default defineConfig({
+  server: {
+    open: true,
+    port: 8000
+  },
   plugins: [react()],
   css: {
     preprocessorOptions: {
@@ -15,22 +19,22 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolvePath('packages/index.ts'),
-      name: 'wonder-ui',
+      entry: resolvePath("packages/index.ts"),
+      name: "wonder-ui",
       fileName: (format) => `wonder-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ["react", "react-dom"],
       output: {
         globals: {
-          react: 'react',
-          'react-dom': 'react-dom',
+          react: "react",
+          "react-dom": "react-dom",
         },
       },
       plugins: [
         typescript({
-          tslib: resolve('typescript'),
-          outDir: resolvePath('dist'),
+          tslib: resolve("typescript"),
+          outDir: resolvePath("dist"),
         }),
       ],
     },
