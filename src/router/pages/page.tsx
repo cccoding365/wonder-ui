@@ -12,7 +12,7 @@ const BaseRouter: any = [
     element: <HomePage />,
   },
   {
-    path: '/docs*',
+    path: '/docs/*',
     element: <IndexPage />,
     children: [
       {

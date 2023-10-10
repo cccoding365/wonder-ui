@@ -1,5 +1,5 @@
 import React from 'react'
-import { Space, Alert } from '../../../packages'
+import { Space, Alert } from '@packages'
 
 const Demo1 = () => {
   return (

@@ -5,9 +5,15 @@ import { resolve } from "path";
 
 const resolvePath = (str: string) => resolve(__dirname, str);
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": resolvePath("./src"),
+      "@packages": resolvePath("./packages"),
+    },
+  },
   server: {
-    open: true,
-    port: 8000
+    // open: true,
+    port: 8000,
   },
   plugins: [react()],
   css: {
