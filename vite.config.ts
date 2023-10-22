@@ -23,26 +23,26 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    lib: {
-      entry: resolvePath("packages/index.ts"),
-      name: "wonder-ui",
-      fileName: (format) => `wonder-ui.${format}.js`,
-    },
-    rollupOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        globals: {
-          react: "react",
-          "react-dom": "react-dom",
-        },
-      },
-      plugins: [
-        typescript({
-          tslib: resolve("typescript"),
-          outDir: resolvePath("dist"),
-        }),
-      ],
-    },
-  },
+  // build: {
+  //   lib: {
+  //     entry: resolvePath("packages/index.ts"),
+  //     name: "wonder-ui",
+  //     fileName: (format) => `wonder-ui.${format}.js`,
+  //   },
+  //   rollupOptions: {
+  //     external: ["react", "react-dom"],
+  //     output: {
+  //       globals: {
+  //         react: "react",
+  //         "react-dom": "react-dom",
+  //       },
+  //     },
+  //     plugins: [
+  //       typescript({
+  //         tslib: resolve("typescript"),
+  //         outDir: resolvePath("dist"),
+  //       }),
+  //     ],
+  //   },
+  // },
 });
